@@ -4,10 +4,95 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="style.css"></script>
+    <title>MEME MAKER</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="container">
+      <div class="canvas-container">
+        <canvas id="under-canvas"></canvas>
+        <canvas id="canvas"></canvas>
+      </div>
+      <div class="img-cloak">
+        <img id="doosan" src="src/img/doosan.png" />
+        <img id="hanwha" src="src/img/hanwha.png" />
+        <img id="kia" src="src/img/kia.png" />
+        <img id="kiwoom" src="src/img/kiwoom.png" />
+        <img id="kt" src="src/img/kt.png" />
+        <img id="lg1" src="src/img/lg1.png" />
+        <img id="lg2" src="src/img/lg2.png" />
+        <img id="lotte" src="src/img/lotte.png" />
+        <img id="nc" src="src/img/nc.png" />
+        <img id="samsung" src="src/img/samsung.png" />
+        <img id="ssg" src="src/img/ssg.png" />
+      </div>
+      <div class="input-container">
+        <form id="selected-team">
+          <label for="team-select">팀</label>
+          <select name="teams" id="team-select">
+            <option value="blank">팀을 선택해주세요</option>
+            <option value="doosan">두산 베어스</option>
+            <option value="lotte">롯데 자이언츠</option>
+            <option value="samsung">삼성 라이온즈</option>
+            <option value="kiwoom">키움 히어로즈</option>
+            <option value="hanwha">한화 이글스</option>
+            <option value="kia">KIA 타이거즈</option>
+            <option value="kt">KT WIZ</option>
+            <option value="lg1">LG 트윈스 (럭키)</option>
+            <option value="lg2">LG 트윈스 (스타)</option>
+            <option value="nc">NC 다이노스</option>
+            <option value="ssg">SSG 랜더스</option>
+          </select>
+          <input type="submit" value="선택" />
+        </form>
+        <input
+          id="line-width"
+          type="range"
+          min="1"
+          max="10"
+          value="5"
+          step="0.5"
+        />
+        <span id="line-width-text">line-width: 5</span>
+
+        <input type="color" id="color" />
+        <div class="color-palette">
+          <div
+            class="color-option"
+            style="background-color: #00a8ff"
+            data-color="#00a8ff"
+          ></div>
+          <div
+            class="color-option"
+            style="background-color: #9c88ff"
+            data-color="#9c88ff"
+          ></div>
+          <div
+            class="color-option"
+            style="background-color: #fbc531"
+            data-color="#fbc531"
+          ></div>
+          <div
+            class="color-option"
+            style="background-color: #4cd137"
+            data-color="#4cd137"
+          ></div>
+          <div
+            class="color-option"
+            style="background-color: #487eb0"
+            data-color="#487eb0"
+          ></div>
+        </div>
+        <div class="btn-container">
+          <button id="mode-btn" class="basic-btn">Fill</button>
+          <button id="eraser-btn" class="basic-btn">ERASE</button>
+          <button id="reset-btn" class="basic-btn">RESET</button>
+        </div>
+        <input type="file" accept="image/*" id="file" />
+        <button id="export-btn">Download Your Drawing</button>
+      </div>
+    </div>
+
     <script src="app.js"></script>
   </body>
 </html>

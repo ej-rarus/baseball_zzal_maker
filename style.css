@@ -1,4 +1,90 @@
-* {
+*{
     padding: 0;
     margin: 0;
+}
+
+body {
+    background-color: white;
+    display: center;
+    justify-content: center;
+    align-items: center;
+}
+
+
+canvas{
+    position: absolute;
+    border: 1px solid rgb(230, 230, 230);
+    width: 400px;
+    height: 400px;
+}
+.container {
+    position:static;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+}
+
+.canvas-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 27rem;
+}
+
+#under-canvas {
+    position: absolute;
+    z-index: 0;
+    top:0;
+}
+
+#canvas {
+    position: absolute;
+    z-index: 1;
+    top:0;
+}
+
+
+.btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.basic-btn {
+    margin: 1rem 0.5rem 1rem 0.5rem;
+}
+
+.img-cloak {
+    display: none;
+}
+
+.color-palette {
+    display: flex;
+    flex-direction: row;
+}
+
+.color-option {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+#line-width {
+    margin: 1rem;
+    width: 50%;
+}
+
+#export-btn {
+    margin:1rem;
+    padding:1rem;
 }
