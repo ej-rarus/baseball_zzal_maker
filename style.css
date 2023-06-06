@@ -5,20 +5,20 @@
 
 body {
     background-color: white;
-    display: center;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
 
 canvas{
-    position: absolute;
+    position: flex;
     border: 1px solid rgb(230, 230, 230);
     width: 400px;
     height: 400px;
 }
 .container {
-    position:static;
+    position:flex;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -27,7 +27,7 @@ canvas{
 }
 
 .canvas-container {
-    position: relative;
+    position: flex;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,13 +41,23 @@ canvas{
     padding-top: 27rem;
 }
 
+.team_btn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 27rem;
+}
+
 #under-canvas {
-    position: absolute;
+    display: flex;
+    position: relative;
     z-index: 0;
     top:0;
 }
 
 #canvas {
+    display: flex;
     position: absolute;
     z-index: 1;
     top:0;
@@ -71,12 +81,20 @@ canvas{
 .color-palette {
     display: flex;
     flex-direction: row;
+    gap:10px;
+
 }
 
 .color-option {
-    width: 50px;
-    height: 50px;
+    width: 20px;
+    height: 20px;
     cursor: pointer;
+    border-radius: 25px;
+    transition: transform ease-in-out .2s;
+}
+
+.color-option:hover {
+   transform: scale(1.3);
 }
 
 #line-width {
@@ -88,3 +106,26 @@ canvas{
     margin:1rem;
     padding:1rem;
 }
+
+.teamchoose{
+ gap:10px;
+ margin:10px;
+}
+
+.team_btn{
+  all: unset;
+  padding:15px;
+  margin:10px;
+  width: 120px;
+  font-size: 15px;
+  background-color: pink;
+  color: palevioletred;
+  cursor: pointer;
+  border-radius: 25px;
+  display: center;
+ transition: opacity = 0.2s ;
+}
+
+.team_btn:hover {
+    opacity: 50%
+ }
