@@ -11,8 +11,6 @@ const underCtx = underCanvas.getContext("2d");
 const CANVAS_WIDTH = 400;
 const CANVAS_HEIGHT = 400;
 
-const selectedTeam = document.getElementById("selected-team");
-
 const fileInput = document.getElementById("file");
 
 
@@ -95,12 +93,16 @@ function onDownloadBtnClick(event) {
 function onColorChange(event) {
     ctx.strokeStyle = event.target.value;
     ctx.fillStyle = event.target.value;
+    underCtx.strokeStyle = event.target.value;
+    underCtx.fillStyle = event.target.value;
 }
 
 function onColorClick(event) {
     const colorValue = event.target.dataset.color;
     ctx.strokeStyle = colorValue;
     ctx.fillStyle = colorValue;
+    underCtx.strokeStyle = colorValue;
+    underCtx.fillStyle = colorValue;
     color.value = colorValue;
 }
 
@@ -117,7 +119,8 @@ function onModeClick() {
 
 function onCanvasClick() {
     if (isFilling) {
-        ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+        console.log(underCtx.fillStyle);
+        underCtx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     }
 }
 
@@ -135,6 +138,7 @@ function onEraserClick() {
 function onClickteamDB(event){
     event.preventDefault();
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    underCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     const img = new Image();
     const teamName = document.getElementById("doosan");
     img.src = teamName.src;
@@ -147,6 +151,7 @@ function onClickteamDB(event){
 function onClickteamLG(event){
     event.preventDefault();
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    underCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     const img = new Image();
     const teamName = document.getElementById("lotte");
     img.src = teamName.src;
@@ -159,6 +164,7 @@ function onClickteamLG(event){
 function onClickteamSL(event){
     event.preventDefault();
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    underCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     const img = new Image();
     const teamName = document.getElementById("samsung");
     img.src = teamName.src;
@@ -183,6 +189,7 @@ function onClickteamKH(event){
 function onClickteamHE(event){
     event.preventDefault();
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    underCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     const img = new Image();
     const teamName = document.getElementById("hanwha");
     img.src = teamName.src;
@@ -195,6 +202,7 @@ function onClickteamHE(event){
 function onClickteamKT(event){
     event.preventDefault();
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    underCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     const img = new Image();
     const teamName = document.getElementById("kia");
     img.src = teamName.src;
@@ -207,6 +215,7 @@ function onClickteamKT(event){
 function onClickteamKW(event){
     event.preventDefault();
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    underCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     const img = new Image();
     const teamName = document.getElementById("kt");
     img.src = teamName.src;
@@ -219,6 +228,7 @@ function onClickteamKW(event){
 function onClickteamLT1(event){
     event.preventDefault();
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    underCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     const img = new Image();
     const teamName = document.getElementById("lg1");
     img.src = teamName.src;
@@ -231,6 +241,7 @@ function onClickteamLT1(event){
 function onClickteamLT2(event){
     event.preventDefault();
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    underCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     const img = new Image();
     const teamName = document.getElementById("lg2");
     img.src = teamName.src;
@@ -243,6 +254,7 @@ function onClickteamLT2(event){
 function onClickteamND(event){
     event.preventDefault();
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    underCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     const img = new Image();
     const teamName = document.getElementById("nc");
     img.src = teamName.src;
@@ -255,6 +267,7 @@ function onClickteamND(event){
  function onClickteamSD(event){
     event.preventDefault();
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    underCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     const img = new Image();
     const teamName = document.getElementById("ssg");
     img.src = teamName.src;
@@ -274,7 +287,7 @@ canvas.addEventListener("mousemove", onMove);
 canvas.addEventListener("mousedown", onMouseDown);
 canvas.addEventListener("mouseup", cancelPainting);
 canvas.addEventListener("mouseleave", cancelPainting);
-canvas.addEventListener("click", onCanvasClick);
+canvas.addEventListener("dblclick", onCanvasClick);
 
 lineWidth.addEventListener("change", onLineWidthChange);
 color.addEventListener("change", onColorChange);

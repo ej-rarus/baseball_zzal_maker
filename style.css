@@ -108,21 +108,22 @@ canvas{
 }
 
 .teamchoose{
- gap:10px;
- margin:10px;
+ margin:5px;
 }
 
 .team_btn{
   all: unset;
-  padding:15px;
-  margin:10px;
-  width: 120px;
-  font-size: 15px;
+  padding:10px;
+  margin:5px;
+  width: 100px;
+  font-size: 13px;
+  font-family:'Noto Sans' sans-serif;
   background-color: pink;
   color: palevioletred;
   cursor: pointer;
   border-radius: 25px;
   display: center;
+  text-align:center;
  transition: opacity = 0.2s ;
 }
 
