@@ -13,16 +13,6 @@
         <canvas id="under-canvas"></canvas>
         <canvas id="canvas"></canvas>
       </div>
-      <input
-        id="line-width"
-        type="range"
-        min="1"
-        max="10"
-        value="5"
-        step="0.5"
-      />
-      <span id="line-width-text">line-width: 5</span>
-    
       <div class="img-cloak">
         <img id="doosan" src="src/img/doosan.png" />
         <img id="hanwha" src="src/img/hanwha.png" />
@@ -37,53 +27,66 @@
         <img id="ssg" src="src/img/ssg.png" />
       </div>
       <div class="teamchoose">
-            <button class = "team_btn" id =  "team_DB" value="doosan">두산 베어스</button>
-            <button class = "team_btn" id =  "team_LG" value="lotte">롯데 자이언츠</button>
-            <button class = "team_btn" id =  "team_SL" value="samsung">삼성 라이온즈</button>
-            <button class = "team_btn" id =  "team_KH" value="kiwoom">키움 히어로즈</button>
-            <button class = "team_btn" id =  "team_HE" value="hanwha">한화 이글스</button>
-            <button class = "team_btn" id =  "team_KT" value="kia">KIA 타이거즈</button>
-            <button class = "team_btn" id =  "team_KW" value="kt">KT WIZ</button>
-            <button class = "team_btn" id =  "team_LT1" value="lg1">LG 트윈스 (럭키)</button>
-            <button class = "team_btn" id =  "team_LT2" value="lg2">LG 트윈스 (스타)</button>
-            <button class = "team_btn" id =  "team_ND" value="nc">NC 다이노스</button>
-            <button class = "team_btn" id =  "team_SD" value="ssg">SSG 랜더스</button>
+        <div class="team-btn-container">
+          <button class="team-btn" id="team_DB" value="doosan">두산</button>
+          <button class="team-btn" id="team_LG" value="lotte">롯데</button>
+          <button class="team-btn" id="team_SL" value="samsung">삼성</button>
+          <button class="team-btn" id="team_KH" value="kiwoom">키움</button>
+          <button class="team-btn" id="team_HE" value="hanwha">한화</button>
+        </div>
+        <div class="team-btn-container">
+          <button class="team-btn" id="team_KT" value="kia">KIA</button>
+          <button class="team-btn" id="team_KW" value="kt">KT</button>
+          <button class="team-btn" id="team_LT1" value="lg1">LG (럭키)</button>
+          <button class="team-btn" id="team_LT2" value="lg2">LG (스타)</button>
+          <button class="team-btn" id="team_ND" value="nc">NC</button>
+          <button class="team-btn" id="team_SD" value="ssg">SSG</button>
+        </div>
       </div>
-        <input type="color" id="color" />
-        <div class="color-palette">
-          <div
-            class="color-option"
-            style="background-color: #00a8ff"
-            data-color="#00a8ff"
-          ></div>
-          <div
-            class="color-option"
-            style="background-color: #9c88ff"
-            data-color="#9c88ff"
-          ></div>
-          <div
-            class="color-option"
-            style="background-color: #fbc531"
-            data-color="#fbc531"
-          ></div>
-          <div
-            class="color-option"
-            style="background-color: #4cd137"
-            data-color="#4cd137"
-          ></div>
-          <div
-            class="color-option"
-            style="background-color: #487eb0"
-            data-color="#487eb0"
-          ></div>
-        </div>
-        <div class="btn-container">
-          <button id="mode-btn" class="basic-btn">Fill</button>
-          <button id="eraser-btn" class="basic-btn">ERASE</button>
-          <button id="reset-btn" class="basic-btn">RESET</button>
-        </div>
-        <input type="file" accept="image/*" id="file" />
-        <button id="export-btn">Download Your Drawing</button>
+      <input
+        id="line-width"
+        type="range"
+        min="1"
+        max="10"
+        value="5"
+        step="0.5"
+      />
+      <span id="line-width-text">line-width: 5</span>
+      <input type="color" id="color" />
+      <div class="color-palette">
+        <div
+          class="color-option"
+          style="background-color: #00a8ff"
+          data-color="#00a8ff"
+        ></div>
+        <div
+          class="color-option"
+          style="background-color: #9c88ff"
+          data-color="#9c88ff"
+        ></div>
+        <div
+          class="color-option"
+          style="background-color: #fbc531"
+          data-color="#fbc531"
+        ></div>
+        <div
+          class="color-option"
+          style="background-color: #4cd137"
+          data-color="#4cd137"
+        ></div>
+        <div
+          class="color-option"
+          style="background-color: #487eb0"
+          data-color="#487eb0"
+        ></div>
+      </div>
+      <div class="btn-container">
+        <button id="mode-btn" class="basic-btn">Fill</button>
+        <button id="eraser-btn" class="basic-btn">ERASE</button>
+        <button id="reset-btn" class="basic-btn">RESET</button>
+      </div>
+      <input type="file" accept="image/*" id="file" />
+      <button id="export-btn">Download Your Drawing</button>
     </div>
 
     <script src="app.js"></script>
