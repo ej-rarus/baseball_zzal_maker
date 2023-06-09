@@ -43,6 +43,18 @@ const teamLT2 = document.getElementById("team_LT2");
 const teamND = document.getElementById("team_ND");
 const teamSD = document.getElementById("team_SD");
 
+const uniformDB = document.getElementById("wear-DB");
+const uniformLG = document.getElementById("wear-LG");
+const uniformSL = document.getElementById("wear-SL");
+const uniformKH = document.getElementById("wear-KH");
+const uniformHE = document.getElementById("wear-HE");
+const uniformKT = document.getElementById("wear-KT");
+const uniformKW = document.getElementById("wear-KW");
+const uniformLT = document.getElementById("wear-LT");
+const uniformND = document.getElementById("wear-ND");
+const uniformSD = document.getElementById("wear-SD");
+
+
 canvas.width = CANVAS_WIDTH;
 canvas.height = CANVAS_HEIGHT;
 underCanvas.width = CANVAS_WIDTH;
@@ -148,147 +160,50 @@ function onEraserClick() {
     ctx.strokeStyle = "white";
 }
 
-function onClickteamDB(event) {
+const imgs = new Array();
+const teams = ["doosan","hanwha","kia","kiwoom","kt","lg1","lg2","lotte","nc","samsung","ssg" ];
+
+for (let i=0;i<11; i++) {
+    imgs[i] = new Image();
+    const teamName = document.getElementById(teams[i]);
+    imgs[i].src = teamName.src;     
+};
+
+function onClickteamCharacter(event){
     event.preventDefault();
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     underCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    const img = new Image();
-    const teamName = document.getElementById("doosan");
-    img.src = teamName.src;
-    console.log(img.src);
-    img.onload = () => {
-        ctx.drawImage(img, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    for (let i=0;i<11; i++){
+        if (event.target.value === teams[i]){
+            ctx.drawImage(imgs[i], 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+        };  
     };
-}
+    }
+   
+    const imgArray = new Array();
+    const uniforms = ["uniform-doosan","uniform-hanwha","uniform-kia","uniform-kiwoom",
+    "uniform-kt","uniform-lg", "uniform-lotte","uniform-nc","uniform-samsung","uniform-ssg"];
 
-function onClickteamLG(event) {
-    event.preventDefault();
-    ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    underCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    const img = new Image();
-    const teamName = document.getElementById("lotte");
-    img.src = teamName.src;
-    console.log(img.src);
-    img.onload = () => {
-        ctx.drawImage(img, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    for (let i=0;i<10; i++) {
+        imgArray[i] = new Image();
+        const uniformName = document.getElementById(uniforms[i]);
+        imgArray[i].src = uniformName.src;     
     };
-}
 
-function onClickteamSL(event) {
+    function onClickUniform(event){
     event.preventDefault();
-    ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    underCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    const img = new Image();
-    const teamName = document.getElementById("samsung");
-    img.src = teamName.src;
-    console.log(img.src);
-    img.onload = () => {
-        ctx.drawImage(img, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    };
-}
-
-function onClickteamKH(event) {
-    event.preventDefault();
-    ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    const img = new Image();
-    const teamName = document.getElementById("kiwoom");
-    img.src = teamName.src;
-    console.log(img.src);
-    img.onload = () => {
-        ctx.drawImage(img, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    };
-}
-
-function onClickteamHE(event) {
-    event.preventDefault();
-    ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    underCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    const img = new Image();
-    const teamName = document.getElementById("hanwha");
-    img.src = teamName.src;
-    console.log(img.src);
-    img.onload = () => {
-        ctx.drawImage(img, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    };
-}
-
-function onClickteamKT(event) {
-    event.preventDefault();
-    ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    underCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    const img = new Image();
-    const teamName = document.getElementById("kia");
-    img.src = teamName.src;
-    console.log(img.src);
-    img.onload = () => {
-        ctx.drawImage(img, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    };
-}
-
-function onClickteamKW(event) {
-    event.preventDefault();
-    ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    underCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    const img = new Image();
-    const teamName = document.getElementById("kt");
-    img.src = teamName.src;
-    console.log(img.src);
-    img.onload = () => {
-        ctx.drawImage(img, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    };
-}
-
-function onClickteamLT1(event) {
-    event.preventDefault();
-    ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    underCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    const img = new Image();
-    const teamName = document.getElementById("lg1");
-    img.src = teamName.src;
-    console.log(img.src);
-    img.onload = () => {
-        ctx.drawImage(img, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    };
-}
-
-function onClickteamLT2(event) {
-    event.preventDefault();
-    ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    underCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    const img = new Image();
-    const teamName = document.getElementById("lg2");
-    img.src = teamName.src;
-    console.log(img.src);
-    img.onload = () => {
-        ctx.drawImage(img, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    };
-}
-
-function onClickteamND(event) {
-    event.preventDefault();
-    ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    underCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    const img = new Image();
-    const teamName = document.getElementById("nc");
-    img.src = teamName.src;
-    console.log(img.src);
-    img.onload = () => {
-        ctx.drawImage(img, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    };
-}
-
-function onClickteamSD(event) {
-    event.preventDefault();
-    ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    underCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    const img = new Image();
-    const teamName = document.getElementById("ssg");
-    img.src = teamName.src;
-    console.log(img.src);
-    img.onload = () => {
-        ctx.drawImage(img, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    };
-}
+    console.log(event);
+    for (let i=0;i<11; i++){
+        if (event.target.value === uniforms[i]){
+            ctx.drawImage(imgArray[i], 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+            if (event.target.className == "wear-btn") {
+                event.target.className= "wear-clicked-btn";
+                }  else {
+                    event.target.className = "wear-btn"; 
+                };
+            };  
+        };
+    }
 
 function onFileChange(event) {
     const file = event.target.files[0];
@@ -378,17 +293,28 @@ modeBtn.addEventListener("click", onModeClick);
 eraserBtn.addEventListener("click", onEraserClick);
 resetBtn.addEventListener("click", onResetClick);
 
-teamDB.addEventListener("click", onClickteamDB);
-teamLG.addEventListener("click", onClickteamLG);
-teamSL.addEventListener("click", onClickteamSL);
-teamKH.addEventListener("click", onClickteamKH);
-teamHE.addEventListener("click", onClickteamHE);
-teamKT.addEventListener("click", onClickteamKT);
-teamKW.addEventListener("click", onClickteamKW);
-teamLT1.addEventListener("click", onClickteamLT1);
-teamLT2.addEventListener("click", onClickteamLT2);
-teamND.addEventListener("click", onClickteamND);
-teamSD.addEventListener("click", onClickteamSD);
+teamDB.addEventListener("click", onClickteamCharacter);
+teamLG.addEventListener("click", onClickteamCharacter);
+teamSL.addEventListener("click", onClickteamCharacter);
+teamKH.addEventListener("click", onClickteamCharacter);
+teamHE.addEventListener("click", onClickteamCharacter);
+teamKT.addEventListener("click", onClickteamCharacter);
+teamKW.addEventListener("click", onClickteamCharacter);
+teamLT1.addEventListener("click", onClickteamCharacter);
+teamLT2.addEventListener("click", onClickteamCharacter);
+teamND.addEventListener("click", onClickteamCharacter);
+teamSD.addEventListener("click", onClickteamCharacter);
+
+uniformDB.addEventListener("click", onClickUniform);
+uniformLG.addEventListener("click", onClickUniform);
+uniformSL.addEventListener("click", onClickUniform);
+uniformKH.addEventListener("click", onClickUniform);
+uniformHE.addEventListener("click", onClickUniform);
+uniformKT.addEventListener("click", onClickUniform);
+uniformKW.addEventListener("click", onClickUniform);
+uniformLT.addEventListener("click", onClickUniform);
+uniformND.addEventListener("click", onClickUniform);
+uniformSD.addEventListener("click", onClickUniform);
 
 fileInput.addEventListener("change", onFileChange);
 
