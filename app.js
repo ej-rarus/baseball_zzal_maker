@@ -11,6 +11,19 @@ const underCtx = underCanvas.getContext("2d");
 const CANVAS_WIDTH = 400;
 const CANVAS_HEIGHT = 400;
 
+const teamTab = document.getElementById("team-tab");
+const uniformTab = document.getElementById("uniform-tab");
+const accTab = document.getElementById("acc-tab");
+const drawingTab = document.getElementById("drawing-tab");
+const textTab = document.getElementById("text-tab");
+
+const teamUI = document.querySelector(".teamchoose-ui-container");
+const uniformUI = document.querySelector(".uniform-ui-container");
+const accUI = document.querySelector(".acc-ui-container");
+const drawingUI = document.querySelector(".drawing-ui-container");
+const textUI = document.querySelector(".text-ui-container");
+
+
 const fileInput = document.getElementById("file");
 
 
@@ -135,7 +148,7 @@ function onEraserClick() {
     ctx.strokeStyle = "white";
 }
 
-function onClickteamDB(event){
+function onClickteamDB(event) {
     event.preventDefault();
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     underCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
@@ -146,9 +159,9 @@ function onClickteamDB(event){
     img.onload = () => {
         ctx.drawImage(img, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     };
-    }
+}
 
-function onClickteamLG(event){
+function onClickteamLG(event) {
     event.preventDefault();
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     underCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
@@ -159,9 +172,9 @@ function onClickteamLG(event){
     img.onload = () => {
         ctx.drawImage(img, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     };
-    }   
+}
 
-function onClickteamSL(event){
+function onClickteamSL(event) {
     event.preventDefault();
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     underCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
@@ -172,9 +185,9 @@ function onClickteamSL(event){
     img.onload = () => {
         ctx.drawImage(img, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     };
-    }      
+}
 
-function onClickteamKH(event){
+function onClickteamKH(event) {
     event.preventDefault();
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     const img = new Image();
@@ -184,9 +197,9 @@ function onClickteamKH(event){
     img.onload = () => {
         ctx.drawImage(img, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     };
-    }      
+}
 
-function onClickteamHE(event){
+function onClickteamHE(event) {
     event.preventDefault();
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     underCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
@@ -197,9 +210,9 @@ function onClickteamHE(event){
     img.onload = () => {
         ctx.drawImage(img, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     };
-    } 
+}
 
-function onClickteamKT(event){
+function onClickteamKT(event) {
     event.preventDefault();
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     underCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
@@ -210,9 +223,9 @@ function onClickteamKT(event){
     img.onload = () => {
         ctx.drawImage(img, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     };
-    }     
+}
 
-function onClickteamKW(event){
+function onClickteamKW(event) {
     event.preventDefault();
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     underCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
@@ -223,9 +236,9 @@ function onClickteamKW(event){
     img.onload = () => {
         ctx.drawImage(img, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     };
-    }       
+}
 
-function onClickteamLT1(event){
+function onClickteamLT1(event) {
     event.preventDefault();
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     underCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
@@ -236,9 +249,9 @@ function onClickteamLT1(event){
     img.onload = () => {
         ctx.drawImage(img, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     };
-    }
+}
 
-function onClickteamLT2(event){
+function onClickteamLT2(event) {
     event.preventDefault();
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     underCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
@@ -249,9 +262,9 @@ function onClickteamLT2(event){
     img.onload = () => {
         ctx.drawImage(img, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     };
-    }
+}
 
-function onClickteamND(event){
+function onClickteamND(event) {
     event.preventDefault();
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     underCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
@@ -262,9 +275,9 @@ function onClickteamND(event){
     img.onload = () => {
         ctx.drawImage(img, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     };
-    }
+}
 
- function onClickteamSD(event){
+function onClickteamSD(event) {
     event.preventDefault();
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     underCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
@@ -275,12 +288,70 @@ function onClickteamND(event){
     img.onload = () => {
         ctx.drawImage(img, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     };
-    }
-    
+}
+
 function onFileChange(event) {
     const file = event.target.files[0];
     const url = URL.createObjectURL(file);
     console.log(url);
+}
+
+function onClickTeamTab() {
+    if (teamUI.style.display === "" || teamUI.style.display === "none") {
+        accUI.style.display = "none";
+        drawingUI.style.display = "none";
+        textUI.style.display = "none";
+        uniformUI.style.display = "none";
+        teamUI.style.display = "flex";
+    }
+}
+
+function onClickUniformTab() {
+    if (uniformUI.style.display === "" || uniformUI.style.display === "none") {
+        teamUI.style.display = "none";
+        accUI.style.display = "none";
+        drawingUI.style.display = "none";
+        textUI.style.display = "none";
+        uniformUI.style.display = "flex";
+    } else {
+        uniformUI.style.display = "none";
+    }
+}
+
+function onClickAccTab() {
+    if (accUI.style.display === "" || accUI.style.display === "none") {
+        teamUI.style.display = "none";
+        drawingUI.style.display = "none";
+        textUI.style.display = "none";
+        uniformUI.style.display = "none";
+        accUI.style.display = "flex";
+    } else {
+        accUI.style.display = "none";
+    }
+}
+
+function onClickDrawingTab() {
+    if (drawingUI.style.display === "" || drawingUI.style.display === "none") {
+        teamUI.style.display = "none";
+        accUI.style.display = "none";
+        textUI.style.display = "none";
+        uniformUI.style.display = "none";
+        drawingUI.style.display = "flex";
+    } else {
+        drawingUI.style.display = "none";
+    }
+}
+
+function onClickTextTab() {
+    if (textUI.style.display === "" || textUI.style.display === "none") {
+        teamUI.style.display = "none";
+        accUI.style.display = "none";
+        drawingUI.style.display = "none";
+        uniformUI.style.display = "none";
+        textUI.style.display = "flex";
+    } else {
+        textUI.style.display = "none";
+    }
 }
 
 canvas.addEventListener("mousemove", onMove);
@@ -288,6 +359,13 @@ canvas.addEventListener("mousedown", onMouseDown);
 canvas.addEventListener("mouseup", cancelPainting);
 canvas.addEventListener("mouseleave", cancelPainting);
 canvas.addEventListener("dblclick", onCanvasClick);
+
+teamTab.addEventListener("click", onClickTeamTab);
+uniformTab.addEventListener("click", onClickUniformTab);
+accTab.addEventListener("click", onClickAccTab);
+drawingTab.addEventListener("click", onClickDrawingTab);
+textTab.addEventListener("click", onClickTextTab);
+
 
 lineWidth.addEventListener("change", onLineWidthChange);
 color.addEventListener("change", onColorChange);

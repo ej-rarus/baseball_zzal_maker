@@ -26,66 +26,99 @@
         <img id="samsung" src="src/img/samsung.png" />
         <img id="ssg" src="src/img/ssg.png" />
       </div>
-      <div class="teamchoose">
-        <div class="team-btn-container">
-          <button class="team-btn" id="team_DB" value="doosan">두산</button>
-          <button class="team-btn" id="team_LG" value="lotte">롯데</button>
-          <button class="team-btn" id="team_SL" value="samsung">삼성</button>
-          <button class="team-btn" id="team_KH" value="kiwoom">키움</button>
-          <button class="team-btn" id="team_HE" value="hanwha">한화</button>
+      <div class="ui-container">
+        <div class="tab-btn-container">
+          <div class="tab-btn" id="team-tab">팀 선택</div>
+          <div class="tab-btn" id="uniform-tab">유니폼 선택</div>
+          <div class="tab-btn" id="acc-tab">악세서리</div>
+          <div class="tab-btn" id="drawing-tab">그리기</div>
+          <div class="tab-btn" id="text-tab">텍스트</div>
         </div>
-        <div class="team-btn-container">
-          <button class="team-btn" id="team_KT" value="kia">KIA</button>
-          <button class="team-btn" id="team_KW" value="kt">KT</button>
-          <button class="team-btn" id="team_LT1" value="lg1">LG (럭키)</button>
-          <button class="team-btn" id="team_LT2" value="lg2">LG (스타)</button>
-          <button class="team-btn" id="team_ND" value="nc">NC</button>
-          <button class="team-btn" id="team_SD" value="ssg">SSG</button>
+
+        <div class="teamchoose-ui-container">
+          <div class="team-btn-container">
+            <button class="team-btn" id="team_DB" value="doosan">두산</button>
+            <button class="team-btn" id="team_LG" value="lotte">롯데</button>
+            <button class="team-btn" id="team_SL" value="samsung">삼성</button>
+            <button class="team-btn" id="team_KH" value="kiwoom">키움</button>
+            <button class="team-btn" id="team_HE" value="hanwha">한화</button>
+          </div>
+          <div class="team-btn-container">
+            <button class="team-btn" id="team_KT" value="kia">KIA</button>
+            <button class="team-btn" id="team_KW" value="kt">KT</button>
+            <button class="team-btn" id="team_LT1" value="lg1">
+              LG (럭키)
+            </button>
+            <button class="team-btn" id="team_LT2" value="lg2">
+              LG (스타)
+            </button>
+            <button class="team-btn" id="team_ND" value="nc">NC</button>
+            <button class="team-btn" id="team_SD" value="ssg">SSG</button>
+          </div>
+        </div>
+        <div class="uniform-ui-container">
+          유니폼 들어갈 자리
+          <div class="uniform-btn-container">
+            <div class="uniform-btn">1번</div>
+          </div>
+        </div>
+        <div class="acc-ui-container">
+          악세서리 들어갈 자리
+          <div class="acc-btn-container">
+            <div class="acc-btn">a번</div>
+          </div>
+        </div>
+
+        <div class="drawing-ui-container">
+          <input
+            id="line-width"
+            type="range"
+            min="1"
+            max="10"
+            value="5"
+            step="0.5"
+          />
+          <span id="line-width-text">line-width: 5</span>
+          <input type="color" id="color" />
+          <div class="color-palette">
+            <div
+              class="color-option"
+              style="background-color: #00a8ff"
+              data-color="#00a8ff"
+            ></div>
+            <div
+              class="color-option"
+              style="background-color: #9c88ff"
+              data-color="#9c88ff"
+            ></div>
+            <div
+              class="color-option"
+              style="background-color: #fbc531"
+              data-color="#fbc531"
+            ></div>
+            <div
+              class="color-option"
+              style="background-color: #4cd137"
+              data-color="#4cd137"
+            ></div>
+            <div
+              class="color-option"
+              style="background-color: #487eb0"
+              data-color="#487eb0"
+            ></div>
+          </div>
+          <div class="btn-container">
+            <button id="mode-btn" class="basic-btn">Fill</button>
+            <button id="eraser-btn" class="basic-btn">ERASE</button>
+            <button id="reset-btn" class="basic-btn">RESET</button>
+          </div>
+          <input type="file" accept="image/*" id="file" />
+        </div>
+        <div class="text-ui-container">
+          <div>텍스트 들어갈 자리</div>
         </div>
       </div>
-      <input
-        id="line-width"
-        type="range"
-        min="1"
-        max="10"
-        value="5"
-        step="0.5"
-      />
-      <span id="line-width-text">line-width: 5</span>
-      <input type="color" id="color" />
-      <div class="color-palette">
-        <div
-          class="color-option"
-          style="background-color: #00a8ff"
-          data-color="#00a8ff"
-        ></div>
-        <div
-          class="color-option"
-          style="background-color: #9c88ff"
-          data-color="#9c88ff"
-        ></div>
-        <div
-          class="color-option"
-          style="background-color: #fbc531"
-          data-color="#fbc531"
-        ></div>
-        <div
-          class="color-option"
-          style="background-color: #4cd137"
-          data-color="#4cd137"
-        ></div>
-        <div
-          class="color-option"
-          style="background-color: #487eb0"
-          data-color="#487eb0"
-        ></div>
-      </div>
-      <div class="btn-container">
-        <button id="mode-btn" class="basic-btn">Fill</button>
-        <button id="eraser-btn" class="basic-btn">ERASE</button>
-        <button id="reset-btn" class="basic-btn">RESET</button>
-      </div>
-      <input type="file" accept="image/*" id="file" />
+
       <button id="export-btn">Download Your Drawing</button>
     </div>
 
