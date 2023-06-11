@@ -102,6 +102,10 @@ canvas {
     display: none;
 }
 
+.uniform-cloak {
+    display: none;
+}
+
 
 #line-width {
     margin: 1rem;

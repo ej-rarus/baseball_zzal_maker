@@ -191,14 +191,17 @@ function onClickteamCharacter(event){
     };
 
     function onClickUniform(event){
-    event.preventDefault();
-    console.log(event);
     for (let i=0;i<11; i++){
         if (event.target.value === uniforms[i]){
-            ctx.drawImage(imgArray[i], 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
             if (event.target.className == "wear-btn") {
+                ctx.drawImage(imgArray[i], 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
                 event.target.className= "wear-clicked-btn";
-                }  else {
+                console.log(document.getElementById("uniform-"+ uniforms[i]));
+                }  else {   
+                    ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+                   if(event.target.value === "uniform-"+ uniforms[i]){
+                    ctx.drawImage(imgs[i], 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+                   }
                     event.target.className = "wear-btn"; 
                 };
             };  
