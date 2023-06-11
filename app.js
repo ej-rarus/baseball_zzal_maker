@@ -54,6 +54,17 @@ const uniformLT = document.getElementById("wear-LT");
 const uniformND = document.getElementById("wear-ND");
 const uniformSD = document.getElementById("wear-SD");
 
+const batDB = document.getElementById("bat-DB");
+const batLG = document.getElementById("bat-LG");
+const batSL = document.getElementById("bat-SL");
+const batKH = document.getElementById("bat-KH");
+const batHE = document.getElementById("bat-HE");
+const batKT = document.getElementById("bat-KT");
+const batKW = document.getElementById("bat-KW");
+const batLT = document.getElementById("bat-LT");
+const batND = document.getElementById("bat-ND");
+const batSD = document.getElementById("bat-SD");
+
 
 canvas.width = CANVAS_WIDTH;
 canvas.height = CANVAS_HEIGHT;
@@ -109,8 +120,10 @@ function onLineWidthChange(event) {
 function onDownloadBtnClick(event) {
     const downloadLink = document.createElement("a");
 
+    underCtx.drawImage(canvas,0,0,CANVAS_WIDTH, CANVAS_HEIGHT);
+
     downloadLink.download = "Your_Drawing.png";
-    downloadLink.href = canvas.toDataURL("image/png");
+    downloadLink.href = (underCanvas.toDataURL("image/png"));
     downloadLink.click();
 }
 
@@ -196,17 +209,38 @@ function onClickteamCharacter(event){
             if (event.target.className == "wear-btn") {
                 ctx.drawImage(imgArray[i], 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
                 event.target.className= "wear-clicked-btn";
-                console.log(document.getElementById("uniform-"+ uniforms[i]));
                 }  else {   
                     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-                   if(event.target.value === "uniform-"+ uniforms[i]){
-                    ctx.drawImage(imgs[i], 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-                   }
                     event.target.className = "wear-btn"; 
                 };
             };  
         };
     }
+
+    const batArray = new Array();
+    const bats = ["bat-doosan", "bat-hanwha","bat-kia","bat-kiwoom" ,
+    "bat-kt","bat-lg","bat-lotte","bat-nc","bat-samsung","bat-ssg"]
+
+    for (let i=0;i<10; i++) {
+        batArray[i] = new Image();
+        const batName = document.getElementById(bats[i]);
+        batArray[i].src = batName.src;     
+    };
+
+    function onClickBat(event){
+    for (let i=0;i<11; i++){
+        if (event.target.value === bats[i]){
+            if (event.target.className == "bat-btn") {
+                ctx.drawImage(batArray[i], 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+                event.target.className= "bat-clicked-btn";
+                }  else {   
+                    ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+                    event.target.className = "bat-btn"; 
+                };
+            };  
+        };
+    }
+
 
 function onFileChange(event) {
     const file = event.target.files[0];
@@ -318,6 +352,18 @@ uniformKW.addEventListener("click", onClickUniform);
 uniformLT.addEventListener("click", onClickUniform);
 uniformND.addEventListener("click", onClickUniform);
 uniformSD.addEventListener("click", onClickUniform);
+
+batDB.addEventListener("click", onClickBat);
+batLG.addEventListener("click", onClickBat);
+batSL.addEventListener("click", onClickBat);
+batKH.addEventListener("click", onClickBat);
+batHE.addEventListener("click", onClickBat);
+batKT.addEventListener("click", onClickBat);
+batKW.addEventListener("click", onClickBat);
+batLT.addEventListener("click", onClickBat);
+batND.addEventListener("click", onClickBat);
+batSD.addEventListener("click", onClickBat);
+
 
 fileInput.addEventListener("change", onFileChange);
 

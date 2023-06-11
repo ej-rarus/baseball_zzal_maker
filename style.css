@@ -106,6 +106,10 @@ canvas {
     display: none;
 }
 
+.bat-cloak {
+    display: none;
+}
+
 
 #line-width {
     margin: 1rem;
@@ -236,6 +240,39 @@ canvas {
  }
 
  .wear-clicked-btn{
+    all: unset;
+    padding: 0.5em;
+    margin:0.5rem;
+    width: 4rem;
+    font-size: 13px;
+    font-family:'Noto Sans' sans-serif;
+    background-color: pink;
+    border-color: black;
+    border-width: 10px ;
+    color: palevioletred;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align:center;
+ }
+
+
+ .bat-btn{
+    all: unset;
+    padding: 0.5em;
+    margin:0.5rem;
+    width: 4rem;
+    font-size: 13px;
+    font-family:'Noto Sans' sans-serif;
+    background-color: white;
+    border-color: black;
+    border-width: 10px ;
+    color: palevioletred;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align:center;
+ }
+
+ .bat-clicked-btn{
     all: unset;
     padding: 0.5em;
     margin:0.5rem;
