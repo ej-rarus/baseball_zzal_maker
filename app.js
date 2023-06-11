@@ -8,6 +8,7 @@ const underCanvas = document.getElementById("under-canvas");
 const ctx = canvas.getContext("2d");
 const underCtx = underCanvas.getContext("2d");
 
+
 const CANVAS_WIDTH = 400;
 const CANVAS_HEIGHT = 400;
 
@@ -26,10 +27,14 @@ const textUI = document.querySelector(".text-ui-container");
 
 const fileInput = document.getElementById("file");
 
+const uniformSaveBtn = document.getElementById("uniform-save");
+const uniformResetBtn = document.getElementById("uniform-reset");
 
 const modeBtn = document.getElementById("mode-btn");
 const eraserBtn = document.getElementById("eraser-btn");
 const resetBtn = document.getElementById("reset-btn");
+
+
 const downloadBtn = document.getElementById("export-btn");
 const teamDB = document.getElementById("team_DB");
 const teamLG = document.getElementById("team_LG");
@@ -189,6 +194,7 @@ function onClickteamCharacter(event){
     for (let i=0;i<11; i++){
         if (event.target.value === teams[i]){
             ctx.drawImage(imgs[i], 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+            underCtx.drawImage(canvas,0,0,CANVAS_WIDTH, CANVAS_HEIGHT); 
         };  
     };
     }
@@ -204,17 +210,25 @@ function onClickteamCharacter(event){
     };
 
     function onClickUniform(event){
-    for (let i=0;i<11; i++){
-        if (event.target.value === uniforms[i]){
-            if (event.target.className == "wear-btn") {
-                ctx.drawImage(imgArray[i], 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-                event.target.className= "wear-clicked-btn";
-                }  else {   
-                    ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-                    event.target.className = "wear-btn"; 
-                };
-            };  
-        };
+        for (let i=0;i<11; i++){
+            if (event.target.value === uniforms[i]){
+                if (event.target.className == "wear-btn") {
+                    ctx.drawImage(imgArray[i], 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT); 
+                    event.target.className= "wear-clicked-btn";
+                    }  else { 
+                        ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+                        event.target.className = "wear-btn"; 
+                        };
+                };  
+            };
+        }
+
+    function onModeSave(){
+        underCtx.drawImage(canvas,0,0,CANVAS_WIDTH, CANVAS_HEIGHT);
+    }
+
+    function onModeReset(){
+        ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     }
 
     const batArray = new Array();
@@ -329,6 +343,9 @@ colorOptions.forEach(color => color.addEventListener("click", onColorClick));
 modeBtn.addEventListener("click", onModeClick);
 eraserBtn.addEventListener("click", onEraserClick);
 resetBtn.addEventListener("click", onResetClick);
+
+uniformResetBtn.addEventListener("click", onModeReset);
+uniformSaveBtn.addEventListener("click", onModeSave);
 
 teamDB.addEventListener("click", onClickteamCharacter);
 teamLG.addEventListener("click", onClickteamCharacter);
