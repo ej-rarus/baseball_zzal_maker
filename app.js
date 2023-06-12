@@ -2,6 +2,7 @@
 const lineWidth = document.getElementById("line-width");
 const lineWidthText = document.getElementById("line-width-text");
 const color = document.getElementById("color");
+const Drawcolor = document.getElementById("draw-color");
 const colorOptions = Array.from(document.getElementsByClassName("color-option"));
 const canvas = document.getElementById("canvas");
 const underCanvas = document.getElementById("under-canvas");
@@ -153,6 +154,7 @@ function onColorClick(event) {
     underCtx.strokeStyle = colorValue;
     underCtx.fillStyle = colorValue;
     color.value = colorValue;
+    Drawcolor.value = colorValue;
 }
 
 function onfillClick() {
@@ -217,8 +219,27 @@ function onClickteamCharacter(event){
         underCtx.drawImage(canvas,0,0,CANVAS_WIDTH, CANVAS_HEIGHT);
     }
 
+
     function onModeReset(){
         ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    }
+
+    function onModeUniformReset(){
+        ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+        for (let i=0;i<11; i++){
+            if (document.querySelector(".wear-clicked-btn")){
+                document.querySelector(".wear-clicked-btn").className = "wear-btn";
+            }
+        }
+    }
+
+    function onModeBatReset(){
+        ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+        for (let i=0;i<11; i++){
+            if (document.querySelector(".bat-clicked-btn")){
+                document.querySelector(".bat-clicked-btn").className = "bat-btn";
+            }
+        }
     }
 
     const batArray = new Array();
@@ -353,9 +374,9 @@ resetBtn.addEventListener("click", onResetClick);
 
 TeamResetBtn.addEventListener("click", onModeReset);
 TeamSaveBtn.addEventListener("click", onModeSave);
-UniformResetBtn.addEventListener("click", onModeReset);
+UniformResetBtn.addEventListener("click", onModeUniformReset);
 UniformSaveBtn.addEventListener("click", onModeSave);
-BatResetBtn.addEventListener("click", onModeReset);
+BatResetBtn.addEventListener("click", onModeBatReset);
 BatSaveBtn.addEventListener("click", onModeSave);
 
 teamDB.addEventListener("click", onClickteamCharacter);

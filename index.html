@@ -64,7 +64,9 @@
         </div>
         <div class="ui-box">
           <div class="background-ui-container">
+            <div class = "color-square">
             <input type="color" id="color" />
+            </div>
             <div class="color-palette">
               <div
                 class="color-option"
@@ -92,9 +94,13 @@
                 data-color="#487eb0"
               ></div>
             </div>
-            <button id="fill-btn" class="basic-btn">Fill</button>
-            <input type="file" accept="image/*" id="file" />
-          </div>
+            <div class="btn-container">
+              <button id="fill-btn" class="basic-btn">Fill</button>
+            </div>
+            <div class="file-container">
+              <input type="file" accept="image/*" id="file" />
+            </div>
+            </div>
           <div class="teamchoose-ui-container">
             <div class="team-btn-container">
               <button class="team-btn" id="team_DB" value="doosan">두산</button>
@@ -177,7 +183,9 @@
               step="0.5"
             />
             <span id="line-width-text">line-width: 5</span>
-            <input type="color" id="color" />
+            <div class = "color-square">
+              <input type="color" id="draw-color" />
+            </div>
             <div class="color-palette">
               <div
                 class="color-option"

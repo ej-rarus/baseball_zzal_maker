@@ -61,19 +61,30 @@ canvas {
     top:0;
 }
 
+.color-square{
+    display: block;
+}
 
 #color {
+    text-align: center;
     width: 5rem;
     height: 3rem;
     margin-top: 1rem;
 }
+
+#draw-color{
+    width: 5rem;
+    height: 3rem;
+    margin-top: 1rem;
+}
+
 .color-palette {
-    display: flex;
-    flex-direction: row;
+    text-align: center;
     margin: 1rem;
 }
 
 .color-option {
+    display: inline-block;
     width: 3rem;
     height: 3rem;
     cursor: pointer;
@@ -93,6 +104,13 @@ canvas {
     flex-direction: row;
     justify-content: center;
 }
+
+.file-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 
 .basic-btn {
     margin: 1rem 0.5rem 1rem 0.5rem;
@@ -160,7 +178,15 @@ canvas {
     cursor: pointer;
 }
 
-
+.background-ui-container {
+    width: 90%;
+    text-align: center;
+    display: inline-block;
+    direction: column;
+    justify-content: center;
+    margin:0;
+    padding-top: 1rem;
+}
 
 .teamchoose-ui-container {
     width: 90%;
@@ -197,14 +223,6 @@ canvas {
     opacity: 50%
  }
 
-.background-ui-container {
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin:0;
-    padding-top: 1rem;
-}
 
 .uniform-ui-container {
     display: none;
@@ -248,47 +266,6 @@ canvas {
     text-align:center;
  }
 
- .save-reset-container{
-    gap : 30px
- }
- .save-btn{
-    justify-content: center;
-    font-size: 13px;
-    font-family:'Noto Sans' sans-serif;
-    background-color: pink;
-    color: palevioletred;
-    cursor: pointer;
-    border-radius: 5px;
-    text-align:center;
- }
-
- .reset-btn{
-    justify-content: center;
-    font-size: 13px;
-    font-family:'Noto Sans' sans-serif;
-    background-color: pink;
-    color: palevioletred;
-    cursor: pointer;
-    border-radius: 5px;
-    text-align:center;
- }
-
- .wear-clicked-btn{
-    all: unset;
-    padding: 0.5em;
-    margin:0.5rem;
-    width: 4rem;
-    font-size: 13px;
-    font-family:'Noto Sans' sans-serif;
-    background-color: pink;
-    border-color: black;
-    border-width: 10px ;
-    color: palevioletred;
-    cursor: pointer;
-    border-radius: 5px;
-    text-align:center;
- }
-
  .bat-btn{
     all: unset;
     padding: 0.5em;
@@ -316,6 +293,62 @@ canvas {
     border-color: black;
     border-width: 10px ;
     color: olivedrab;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align:center;
+ }
+
+
+ .save-reset-container{
+    text-align: center;
+    gap : 30px
+ }
+ .save-btn{
+    display: inline-block;
+    justify-content: center;
+    font-size: 13px;
+    font-family:'Noto Sans' sans-serif;
+    background-color: pink;
+    color: palevioletred;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align:center;
+ }
+
+ .reset-btn{
+    display: inline-block;
+    justify-content: center;
+    font-size: 13px;
+    font-family:'Noto Sans' sans-serif;
+    background-color: pink;
+    color: palevioletred;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align:center;
+ }
+
+ .wear-clicked-btn{
+    all: unset;
+    padding: 0.5em;
+    margin:0.5rem;
+    width: 4rem;
+    font-size: 13px;
+    font-family:'Noto Sans' sans-serif;
+    background-color: pink;
+    border-color: black;
+    border-width: 10px ;
+    color: palevioletred;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align:center;
+ }
+
+ #fill-btn{
+    width: 4rem;
+    font-size: 13px;
+    font-family:'Noto Sans' sans-serif;
+    background-color: pink;
+    color: palevioletred;
     cursor: pointer;
     border-radius: 5px;
     text-align:center;
