@@ -164,7 +164,7 @@ canvas {
 
 .teamchoose-ui-container {
     width: 90%;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     margin:0;
@@ -196,6 +196,15 @@ canvas {
 .team-btn:hover {
     opacity: 50%
  }
+
+.background-ui-container {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin:0;
+    padding-top: 1rem;
+}
 
 .uniform-ui-container {
     display: none;
