@@ -215,12 +215,56 @@
             </div>
             <div class="btn-container">
               <button id="draw-btn" class="basic-btn">Draw</button>
+              <button class = "save-btn" id = "draw-save"> 저장하기</button>
               <button id="eraser-btn" class="basic-btn">ERASE</button>
               <button id="reset-btn" class="basic-btn">RESET</button>
             </div>
           </div>
           <div class="text-ui-container">
-            <div>텍스트 들어갈 자리</div>
+            <input
+              id="text-size"
+              type="range"
+              min="20px"
+              max="60px"
+              value="40px"
+              step="5px"
+            />
+            <span id="text-size-text">text-size: 40</span>
+            <div class = "color-square">
+              <input type="color" id="draw-color" />
+            </div>
+            <div class="color-palette">
+              <div
+                class="color-option"
+                style="background-color: #00a8ff"
+                data-color="#00a8ff"
+              ></div>
+              <div
+                class="color-option"
+                style="background-color: #9c88ff"
+                data-color="#9c88ff"
+              ></div>
+              <div
+                class="color-option"
+                style="background-color: #fbc531"
+                data-color="#fbc531"
+              ></div>
+              <div
+                class="color-option"
+                style="background-color: #4cd137"
+                data-color="#4cd137"
+              ></div>
+              <div
+                class="color-option"
+                style="background-color: #487eb0"
+                data-color="#487eb0"
+              ></div>
+            </div>
+            <input type = "text" placeholder="Write and double click" id = "text"/>
+            <div class = "return-container">
+              <button class = "return-btn" id = "return-before"> <- 전으로 돌아가기 </button>
+              <button class = "return-btn"id = "return-after"> 뒤로 돌아가기 -> </button>
+            </div>
           </div>
         </div>
       </div>
