@@ -29,10 +29,15 @@ const textUI = document.querySelector(".text-ui-container");
 
 const fileInput = document.getElementById("file");
 
-const uniformSaveBtn = document.getElementById("uniform-save");
-const uniformResetBtn = document.getElementById("uniform-reset");
+const TeamSaveBtn = document.getElementById("team-save");
+const TeamResetBtn = document.getElementById("team-reset");
+const UniformSaveBtn = document.getElementById("uniform-save");
+const UniformResetBtn = document.getElementById("uniform-reset");
+const BatSaveBtn = document.getElementById("bat-save");
+const BatResetBtn = document.getElementById("bat-reset");
 
-const modeBtn = document.getElementById("mode-btn");
+const fillBtn = document.getElementById("fill-btn");
+const drawBtn = document.getElementById("draw-btn");
 const eraserBtn = document.getElementById("eraser-btn");
 const resetBtn = document.getElementById("reset-btn");
 
@@ -96,7 +101,6 @@ const colors = [
 
 
 let isPainting = false;
-let isFilling = false;
 
 function onMove(event) {
     //ctx.strokeStyle = colors[Math.floor(Math.random() * colors.length)];
@@ -151,22 +155,8 @@ function onColorClick(event) {
     color.value = colorValue;
 }
 
-function onModeClick() {
-    if (isFilling) {
-        isFilling = false;
-        modeBtn.innerText = "Fill";
-
-    } else {
-        isFilling = true;
-        modeBtn.innerText = "Draw";
-    }
-}
-
-function onCanvasClick() {
-    if (isFilling) {
-        console.log(underCtx.fillStyle);
+function onfillClick() {
         underCtx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    }
 }
 
 function onResetClick() {
@@ -192,11 +182,9 @@ for (let i=0;i<11; i++) {
 function onClickteamCharacter(event){
     event.preventDefault();
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    underCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     for (let i=0;i<11; i++){
         if (event.target.value === teams[i]){
             ctx.drawImage(imgs[i], 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-            underCtx.drawImage(canvas,0,0,CANVAS_WIDTH, CANVAS_HEIGHT); 
         };  
     };
     }
@@ -343,7 +331,6 @@ canvas.addEventListener("mousemove", onMove);
 canvas.addEventListener("mousedown", onMouseDown);
 canvas.addEventListener("mouseup", cancelPainting);
 canvas.addEventListener("mouseleave", cancelPainting);
-canvas.addEventListener("dblclick", onCanvasClick);
 
 backgroundTab.addEventListener("click",onclickBackgroundTab)
 teamTab.addEventListener("click", onClickTeamTab);
@@ -360,12 +347,16 @@ downloadBtn.addEventListener("click", onDownloadBtnClick);
 
 colorOptions.forEach(color => color.addEventListener("click", onColorClick));
 
-modeBtn.addEventListener("click", onModeClick);
+fillBtn.addEventListener("click", onfillClick);
 eraserBtn.addEventListener("click", onEraserClick);
 resetBtn.addEventListener("click", onResetClick);
 
-uniformResetBtn.addEventListener("click", onModeReset);
-uniformSaveBtn.addEventListener("click", onModeSave);
+TeamResetBtn.addEventListener("click", onModeReset);
+TeamSaveBtn.addEventListener("click", onModeSave);
+UniformResetBtn.addEventListener("click", onModeReset);
+UniformSaveBtn.addEventListener("click", onModeSave);
+BatResetBtn.addEventListener("click", onModeReset);
+BatSaveBtn.addEventListener("click", onModeSave);
 
 teamDB.addEventListener("click", onClickteamCharacter);
 teamLG.addEventListener("click", onClickteamCharacter);
