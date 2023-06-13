@@ -204,8 +204,8 @@ canvas {
 
 .tab-in-tab-container {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: left;
     align-items: center;
 }
 

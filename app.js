@@ -256,15 +256,16 @@ for (let i = 0; i < 10; i++) {
 };
 
 function onClickUniform(event) {
+    uniformCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    if (event.target.className == "wear-clicked-btn"){
+        event.target.className = "wear-btn";
+    }
     for (let i = 0; i < 10; i++) {
         if (event.target.value === uniforms[i]) {
             if (event.target.className == "wear-btn") {
                 uniformCtx.drawImage(imgArray[i], 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
                 event.target.className = "wear-clicked-btn";
-            } else {
-                uniformCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-                event.target.className = "wear-btn";
-            };
+            }
         };
     };
 }
