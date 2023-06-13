@@ -123,6 +123,10 @@ canvas {
     display: none;
 }
 
+.acc-cloak {
+    display: none;
+}
+
 
 #line-width {
     margin: 1rem;
