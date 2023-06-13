@@ -1,10 +1,11 @@
 
 const lineWidth = document.getElementById("line-width");
 const lineWidthText = document.getElementById("line-width-text");
-let textSize = document.getElementById("text-size");
-let textSizeText = document.getElementById("text-size-text");
+const textSize = document.getElementById("text-size");
+const textSizeText = document.getElementById("text-size-text");
 const color = document.getElementById("color");
 const Drawcolor = document.getElementById("draw-color");
+const textColor = document.getElementById("text-color");
 const colorOptions = Array.from(document.getElementsByClassName("color-option"));
 const canvas = document.getElementById("canvas");
 const underCanvas = document.getElementById("under-canvas");
@@ -160,6 +161,7 @@ function onColorClick(event) {
     underCtx.fillStyle = colorValue;
     color.value = colorValue;
     Drawcolor.value = colorValue;
+    textColor.value = colorValue;
 }
 
 function onfillClick() {

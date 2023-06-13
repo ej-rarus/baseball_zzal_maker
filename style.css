@@ -65,18 +65,13 @@ canvas {
     display: block;
 }
 
-#color {
+#color, #draw-color, #text-color{
     text-align: center;
     width: 5rem;
     height: 3rem;
     margin-top: 1rem;
 }
 
-#draw-color{
-    width: 5rem;
-    height: 3rem;
-    margin-top: 1rem;
-}
 
 .color-palette {
     text-align: center;
