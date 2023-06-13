@@ -56,6 +56,7 @@ const fillBtn = document.getElementById("fill-btn");
 const drawBtn = document.getElementById("draw-btn");
 const eraserBtn = document.getElementById("eraser-btn");
 const resetBtn = document.getElementById("reset-btn");
+const textReset = document.getElementById("text-reset-btn");
 
 const gotoTopBtn = document.getElementById("gotoTop");
 
@@ -341,6 +342,10 @@ function onModeReset(){
     drawCtx.clearRect(0,0,CANVAS_WIDTH, CANVAS_HEIGHT);
 }
 
+function onModeTextReset(){
+    textCtx.clearRect(0,0,CANVAS_WIDTH, CANVAS_HEIGHT);
+}
+
 function onTextSizeChange(event) {
     textCtx.textSize = event.target.value;
     textSizeText.innerText = `text-size: ${event.target.value}`;
@@ -474,6 +479,7 @@ fillBtn.addEventListener("click", onfillClick);
 drawBtn.addEventListener("click", onDrawClick);
 eraserBtn.addEventListener("click", onEraserClick);
 resetBtn.addEventListener("click", onModeReset);
+textReset.addEventListener("click", onModeTextReset);
 
 teamDB.addEventListener("click", onClickteamCharacter);
 teamLG.addEventListener("click", onClickteamCharacter);
