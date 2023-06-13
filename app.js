@@ -7,9 +7,21 @@ const color = document.getElementById("color");
 const Drawcolor = document.getElementById("draw-color");
 const textColor = document.getElementById("text-color");
 const colorOptions = Array.from(document.getElementsByClassName("color-option"));
-const canvas = document.getElementById("canvas");
+
+const textCanvas = document.getElementById("text-canvas");
+const drawCanvas = document.getElementById("draw-canvas");
+const accCanvas = document.getElementById("acc-canvas");
+const batCanvas = document.getElementById("bat-canvas");
+const uniformCanvas = document.getElementById("uniform-canvas");
+const teamCanvas = document.getElementById("team-canvas");
 const underCanvas = document.getElementById("under-canvas");
-const ctx = canvas.getContext("2d");
+
+const textCtx = textCanvas.getContext("2d");
+const drawCtx = drawCanvas.getContext("2d");
+const accCtx = accCanvas.getContext("2d");
+const batCtx = batCanvas.getContext("2d");
+const uniformCtx = uniformCanvas.getContext("2d");
+const teamCtx = teamCanvas.getContext("2d");
 const underCtx = underCanvas.getContext("2d");
 
 
@@ -39,16 +51,6 @@ const textUI = document.querySelector(".text-ui-container");
 
 const textInput = document.getElementById("text");
 const fileInput = document.getElementById("file");
-
-const TeamSaveBtn = document.getElementById("team-save");
-const TeamResetBtn = document.getElementById("team-reset");
-const UniformSaveBtn = document.getElementById("uniform-save");
-const UniformResetBtn = document.getElementById("uniform-reset");
-const BatSaveBtn = document.getElementById("bat-save");
-const BatResetBtn = document.getElementById("bat-reset");
-const DrawSaveBtn = document.getElementById("draw-save");
-const BeforeBtn = document.getElementById("return-before");
-const AfterBtn = document.getElementById("return-after");
 
 const fillBtn = document.getElementById("fill-btn");
 const drawBtn = document.getElementById("draw-btn");
@@ -92,13 +94,27 @@ const batLT = document.getElementById("bat-LT");
 const batND = document.getElementById("bat-ND");
 const batSD = document.getElementById("bat-SD");
 
-
-canvas.width = CANVAS_WIDTH;
-canvas.height = CANVAS_HEIGHT;
+textCanvas.width = CANVAS_WIDTH;
+textCanvas.height = CANVAS_HEIGHT;
+drawCanvas.width = CANVAS_WIDTH;
+drawCanvas.height = CANVAS_HEIGHT;
+accCanvas.width = CANVAS_WIDTH;
+accCanvas.height = CANVAS_HEIGHT;
+batCanvas.width = CANVAS_WIDTH;
+batCanvas.height = CANVAS_HEIGHT;
+uniformCanvas.width = CANVAS_WIDTH;
+uniformCanvas.height = CANVAS_HEIGHT;
+teamCanvas.width = CANVAS_WIDTH;
+teamCanvas.height = CANVAS_HEIGHT;
 underCanvas.width = CANVAS_WIDTH;
 underCanvas.height = CANVAS_HEIGHT;
 
-ctx.lineWidth = lineWidth.value;
+textCtx.lineWidth = lineWidth.value;
+drawCtx.lineWidth = lineWidth.value;
+accCtx.lineWidth = lineWidth.value;
+batCtx.lineWidth = lineWidth.value;
+uniformCtx.lineWidth = lineWidth.value;
+teamCtx.lineWidth = lineWidth.value;
 underCtx.lineWidth = lineWidth.value;
 
 
@@ -406,11 +422,11 @@ function onClickTabInTabEtc() {
 
 
 
-canvas.addEventListener("mousemove", onMove);
-canvas.addEventListener("mousedown", onMouseDown);
-canvas.addEventListener("mouseup", cancelPainting);
-canvas.addEventListener("mouseleave", cancelPainting);
-canvas.addEventListener("dblclick", onTexting);
+drawCanvas.addEventListener("mousemove", onMove);
+drawCanvas.addEventListener("mousedown", onMouseDown);
+drawCanvas.addEventListener("mouseup", cancelPainting);
+drawCanvas.addEventListener("mouseleave", cancelPainting);
+textCanvas.addEventListener("dblclick", onTexting);
 
 backgroundTab.addEventListener("click", onclickBackgroundTab)
 teamTab.addEventListener("click", onClickTeamTab);
@@ -436,15 +452,6 @@ fillBtn.addEventListener("click", onfillClick);
 drawBtn.addEventListener("click", onDrawClick);
 eraserBtn.addEventListener("click", onEraserClick);
 resetBtn.addEventListener("click", onModeReset);
-
-TeamResetBtn.addEventListener("click", onModeReset);
-TeamSaveBtn.addEventListener("click", onModeSave);
-UniformResetBtn.addEventListener("click", onModeUniformReset);
-UniformSaveBtn.addEventListener("click", onModeSave);
-BatResetBtn.addEventListener("click", onModeBatReset);
-BatSaveBtn.addEventListener("click", onModeSave);
-DrawSaveBtn.addEventListener("click", onModeSave);
-BeforeBtn.addEventListener("click", onModeBefore);
 
 teamDB.addEventListener("click", onClickteamCharacter);
 teamLG.addEventListener("click", onClickteamCharacter);

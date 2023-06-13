@@ -10,8 +10,13 @@
   <body>
     <div class="container">
       <div class="canvas-container">
+        <canvas id="text-canvas"></canvas>
+        <canvas id="draw-canvas"></canvas>
+        <canvas id="acc-canvas"></canvas>
+        <canvas id="bat-canvas"></canvas>
+        <canvas id="uniform-canvas"></canvas>
+        <canvas id="team-canvas"></canvas>
         <canvas id="under-canvas"></canvas>
-        <canvas id="canvas"></canvas>
       </div>
       <div class="img-cloak">
         <img id="doosan" src="src/img/doosan.png" />
@@ -147,10 +152,6 @@
               <button class="team-btn" id="team_ND" value="nc">NC</button>
               <button class="team-btn" id="team_SD" value="ssg">SSG</button>
             </div>
-            <div class="save-reset-container">
-              <button class="save-btn" id="team-save">저장하기</button>
-              <button class="reset-btn" id="team-reset">초기화하기</button>
-            </div>
           </div>
           <div class="uniform-ui-container">
             <div class="uniform-btn-container">
@@ -188,10 +189,6 @@
                   SSG
                 </button>
               </div>
-              <div class="save-reset-container">
-                <button class="save-btn" id="uniform-save">저장하기</button>
-                <button class="reset-btn" id="uniform-reset">초기화하기</button>
-              </div>
             </div>
           </div>
           <div class="acc-ui-container">
@@ -225,20 +222,12 @@
                 <button class="bat-btn" id="bat-ND" value="bat-nc">NC</button>
                 <button class="bat-btn" id="bat-SD" value="bat-ssg">SSG</button>
               </div>
-              <div class="save-reset-container">
-                <button class="save-btn" id="bat-save">저장하기</button>
-                <button class="reset-btn" id="bat-reset">초기화하기</button>
-              </div>
             </div>
 
             <div class="acc-btn-container" id="tab-in-tab-etc">
               <div class="bat-btn-container">
                 <div class="bat-btn">머리띠</div>
                 <div class="bat-btn">목걸이</div>
-              </div>
-              <div class="save-reset-container">
-                <button class="save-btn" id="bat-save">저장하기</button>
-                <button class="reset-btn" id="bat-reset">초기화하기</button>
               </div>
             </div>
           </div>
@@ -310,7 +299,6 @@
             </div>
             <div class="btn-container">
               <button id="draw-btn" class="basic-btn">Draw</button>
-              <button class="save-btn" id="draw-save">저장하기</button>
               <button id="eraser-btn" class="basic-btn">ERASE</button>
               <button id="reset-btn" class="basic-btn">RESET</button>
             </div>
@@ -382,14 +370,6 @@
               ></div>
             </div>
             <input type="text" placeholder="Write and double click" id="text" />
-            <div class="return-container">
-              <button class="return-btn" id="return-before">
-                <- 전으로 돌아가기
-              </button>
-              <button class="return-btn" id="return-after">
-                뒤로 돌아가기 ->
-              </button>
-            </div>
           </div>
         </div>
       </div>
