@@ -283,21 +283,6 @@ canvas {
     align-items: center;
 }
 
-.wear-btn{
-    all: unset;
-    padding: 0.5em;
-    margin:0.5rem;
-    width: 4rem;
-    font-size: 13px;
-    font-family:'Noto Sans' sans-serif;
-    background-color: white;
-    border-color: black;
-    border-width: 10px ;
-    color: palevioletred;
-    cursor: pointer;
-    border-radius: 5px;
-    text-align:center;
- }
 
 .acc-btn-container {
     display: flex;
@@ -387,7 +372,23 @@ canvas {
     text-align:center;
  }
 
- .wear-clicked-btn{
+ .wear-btn{
+    all: unset;
+    padding: 0.5em;
+    margin:0.5rem;
+    width: 4rem;
+    font-size: 13px;
+    font-family:'Noto Sans' sans-serif;
+    background-color: white;
+    border-color: black;
+    border-width: 10px ;
+    color: palevioletred;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align:center;
+ }
+
+ .wear-btn .active {
     all: unset;
     padding: 0.5em;
     margin:0.5rem;

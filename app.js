@@ -257,17 +257,16 @@ for (let i = 0; i < 10; i++) {
 };
 
 function onClickUniform(event) {
+    event.preventDefault();
     uniformCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    if (event.target.className == "wear-clicked-btn"){
-        event.target.className = "wear-btn";
-    }
     for (let i = 0; i < 10; i++) {
         if (event.target.value === uniforms[i]) {
             if (event.target.className == "wear-btn") {
+                event.target.className += " active";
                 uniformCtx.drawImage(imgArray[i], 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-                event.target.className = "wear-clicked-btn";
+            } else {event.target.className = "wear-btn";
             }
-        };
+        }
     };
 }
 
@@ -283,6 +282,8 @@ for (let i = 0; i < 10; i++) {
 };
 
 function onClickBat(event) {
+    event.preventDefault();
+    batCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     for (let i = 0; i < 10; i++) {
         if (event.target.value === bats[i]) {
             if (event.target.className == "bat-btn") {
@@ -325,6 +326,9 @@ function onFileChange(event) {
     const file = event.target.files[0];
     const url = URL.createObjectURL(file);
     console.log(url);
+    newFile = new Image();
+    newFile.src = url;
+    underCtx.drawImage(newFile, 0,0,CANVAS_WIDTH, CANVAS_HEIGHT);
 }
 
 function onTexting(event) {
