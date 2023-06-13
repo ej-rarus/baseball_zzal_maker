@@ -94,6 +94,19 @@ const batLT = document.getElementById("bat-LT");
 const batND = document.getElementById("bat-ND");
 const batSD = document.getElementById("bat-SD");
 
+const accDB = document.getElementById("acc-DB");
+const accLG = document.getElementById("acc-LG");
+const accSL = document.getElementById("acc-SL");
+const accKH = document.getElementById("acc-KH");
+const accHE = document.getElementById("acc-HE");
+const accKT = document.getElementById("acc-KT");
+const accKW = document.getElementById("acc-KW");
+const accLT = document.getElementById("acc-LT");
+const accND = document.getElementById("acc-ND");
+const accSD = document.getElementById("acc-SD");
+
+
+
 textCanvas.width = CANVAS_WIDTH;
 textCanvas.height = CANVAS_HEIGHT;
 drawCanvas.width = CANVAS_WIDTH;
@@ -138,12 +151,12 @@ function onMove(event) {
 
     if (isPainting) {
 
-        ctx.lineTo(event.offsetX, event.offsetY);
-        ctx.stroke();
+        drawCtx.lineTo(event.offsetX, event.offsetY);
+        drawCtx.stroke();
         return;
     }
-    ctx.beginPath();
-    ctx.moveTo(event.offsetX, event.offsetY);
+    drawCtx.beginPath();
+    drawCtx.moveTo(event.offsetX, event.offsetY);
 }
 
 function onMouseDown() {
@@ -155,14 +168,19 @@ function cancelPainting() {
 }
 
 function onLineWidthChange(event) {
-    ctx.lineWidth = event.target.value;
+    drawCtx.lineWidth = event.target.value;
     lineWidthText.innerText = `line-width: ${event.target.value}`;
 }
 
 function onDownloadBtnClick(event) {
     const downloadLink = document.createElement("a");
 
-    underCtx.drawImage(canvas, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    underCtx.drawImage(teamCanvas, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    underCtx.drawImage(uniformCanvas, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    underCtx.drawImage(batCanvas, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    underCtx.drawImage(accCanvas, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    underCtx.drawImage(drawCanvas, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    underCtx.drawImage(textCanvas, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 
     downloadLink.download = "Your_Drawing.png";
     downloadLink.href = (underCanvas.toDataURL("image/png"));
@@ -175,16 +193,20 @@ function onGotoTopBtnclick(event) {
 
 
 function onColorChange(event) {
-    ctx.strokeStyle = event.target.value;
-    ctx.fillStyle = event.target.value;
+    textCtx.strokeStyle = event.target.value;
+    textCtx.fillStyle = event.target.value;
+    drawCtx.strokeStyle = event.target.value;
+    drawCtx.fillStyle = event.target.value;
     underCtx.strokeStyle = event.target.value;
     underCtx.fillStyle = event.target.value;
 }
 
 function onColorClick(event) {
     const colorValue = event.target.dataset.color;
-    ctx.strokeStyle = colorValue;
-    ctx.fillStyle = colorValue;
+    textCtx.strokeStyle = colorValue;
+    textCtx.fillStyle = colorValue;
+    drawCtx.strokeStyle = colorValue;
+    drawCtx.fillStyle = colorValue;
     underCtx.strokeStyle = colorValue;
     underCtx.fillStyle = colorValue;
     color.value = colorValue;
@@ -197,11 +219,11 @@ function onfillClick() {
 }
 
 function onDrawClick() {
-    ctx.globalCompositeOperation = "source-over"
+    drawCtx.globalCompositeOperation = "source-over"
 }
 
 function onEraserClick() {
-    ctx.globalCompositeOperation = "destination-out";
+    drawCtx.globalCompositeOperation = "destination-out";
 }
 
 const imgs = new Array();
@@ -215,10 +237,10 @@ for (let i = 0; i < 11; i++) {
 
 function onClickteamCharacter(event) {
     event.preventDefault();
-    ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    teamCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     for (let i = 0; i < 11; i++) {
         if (event.target.value === teams[i]) {
-            ctx.drawImage(imgs[i], 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+            teamCtx.drawImage(imgs[i], 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
         };
     };
 }
@@ -234,45 +256,19 @@ for (let i = 0; i < 10; i++) {
 };
 
 function onClickUniform(event) {
-    for (let i = 0; i < 11; i++) {
+    for (let i = 0; i < 10; i++) {
         if (event.target.value === uniforms[i]) {
             if (event.target.className == "wear-btn") {
-                ctx.drawImage(imgArray[i], 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+                uniformCtx.drawImage(imgArray[i], 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
                 event.target.className = "wear-clicked-btn";
             } else {
-                ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+                uniformCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
                 event.target.className = "wear-btn";
             };
         };
     };
 }
 
-function onModeSave() {
-    underCtx.drawImage(canvas, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-}
-
-
-function onModeReset() {
-    ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-}
-
-function onModeUniformReset() {
-    ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    for (let i = 0; i < 11; i++) {
-        if (document.querySelector(".wear-clicked-btn")) {
-            document.querySelector(".wear-clicked-btn").className = "wear-btn";
-        }
-    }
-}
-
-function onModeBatReset() {
-    ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    for (let i = 0; i < 11; i++) {
-        if (document.querySelector(".bat-clicked-btn")) {
-            document.querySelector(".bat-clicked-btn").className = "bat-btn";
-        }
-    }
-}
 
 const batArray = new Array();
 const bats = ["bat-doosan", "bat-hanwha", "bat-kia", "bat-kiwoom",
@@ -285,14 +281,38 @@ for (let i = 0; i < 10; i++) {
 };
 
 function onClickBat(event) {
-    for (let i = 0; i < 11; i++) {
+    for (let i = 0; i < 10; i++) {
         if (event.target.value === bats[i]) {
             if (event.target.className == "bat-btn") {
-                ctx.drawImage(batArray[i], 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+                batCtx.drawImage(batArray[i], 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
                 event.target.className = "bat-clicked-btn";
             } else {
-                ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+                batCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
                 event.target.className = "bat-btn";
+            };
+        };
+    };
+}
+
+const accArray = new Array();
+const accs = ["acc-doosan", "acc-hanwha", "acc-kia", "acc-kiwoom",
+    "acc-kt", "acc-lg", "acc-lotte", "acc-nc", "acc-samsung", "acc-ssg"]
+
+for (let i = 0; i < 10; i++) {
+    accArray[i] = new Image();
+    const accName = document.getElementById(accs[i]);
+    accArray[i].src = accName.src;
+};
+
+function onClickAcc(event) {
+    for (let i = 0; i < 10; i++) {
+        if (event.target.value === accs[i]) {
+            if (event.target.className == "acc-btn") {
+                accCtx.drawImage(accArray[i], 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+                event.target.className = "acc-clicked-btn";
+            } else {
+                accCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+                event.target.className = "acc-btn";
             };
         };
     };
@@ -309,21 +329,22 @@ function onTexting(event) {
     const text = textInput.value;
     const fonttype = "serif"
     if (text !== "") {
-        ctx.lineWidth = 1;
-        ctx.font = `${ctx.textSize}px ${fonttype}`;
-        ctx.strokeText(text, event.offsetX, event.offsetY);
+        textCtx.lineWidth = 1;
+        textCtx.font = `${textCtx.textSize}px ${fonttype}`;
+        textCtx.strokeText(text, event.offsetX, event.offsetY);
     }
 
 }
 
+function onModeReset(){
+    drawCtx.clearRect(0,0,CANVAS_WIDTH, CANVAS_HEIGHT);
+}
+
 function onTextSizeChange(event) {
-    ctx.textSize = event.target.value;
+    textCtx.textSize = event.target.value;
     textSizeText.innerText = `text-size: ${event.target.value}`;
 }
 
-function onModeBefore() {
-    ctx.drawImage(img1, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-}
 
 function onclickBackgroundTab() {
     if (backgroundUI.style.display === "" || backgroundUI.style.display === "none") {
@@ -422,10 +443,10 @@ function onClickTabInTabEtc() {
 
 
 
-drawCanvas.addEventListener("mousemove", onMove);
-drawCanvas.addEventListener("mousedown", onMouseDown);
-drawCanvas.addEventListener("mouseup", cancelPainting);
-drawCanvas.addEventListener("mouseleave", cancelPainting);
+textCanvas.addEventListener("mousemove", onMove);
+textCanvas.addEventListener("mousedown", onMouseDown);
+textCanvas.addEventListener("mouseup", cancelPainting);
+textCanvas.addEventListener("mouseleave", cancelPainting);
 textCanvas.addEventListener("dblclick", onTexting);
 
 backgroundTab.addEventListener("click", onclickBackgroundTab)
@@ -487,6 +508,15 @@ batLT.addEventListener("click", onClickBat);
 batND.addEventListener("click", onClickBat);
 batSD.addEventListener("click", onClickBat);
 
-
+accDB.addEventListener("click", onClickAcc);
+accLG.addEventListener("click", onClickAcc);
+accSL.addEventListener("click", onClickAcc);
+accKH.addEventListener("click", onClickAcc);
+accHE.addEventListener("click", onClickAcc);
+accKT.addEventListener("click", onClickAcc);
+accKW.addEventListener("click", onClickAcc);
+accLT.addEventListener("click", onClickAcc);
+accND.addEventListener("click", onClickAcc);
+accSD.addEventListener("click", onClickAcc);
 fileInput.addEventListener("change", onFileChange);
 
