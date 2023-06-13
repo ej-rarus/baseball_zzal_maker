@@ -23,6 +23,13 @@ const accTab = document.getElementById("acc-tab");
 const drawingTab = document.getElementById("drawing-tab");
 const textTab = document.getElementById("text-tab");
 
+const tabInTabBat = document.getElementById("tab-in-tab-bat-btn");
+const tabInTabEtc = document.getElementById("tab-in-tab-etc-btn");
+
+const tabInTabBatUI = document.getElementById("tab-in-tab-bat");
+const tabInTabEtcUI = document.getElementById("tab-in-tab-etc");
+
+
 const backgroundUI = document.querySelector(".background-ui-container");
 const teamUI = document.querySelector(".teamchoose-ui-container");
 const uniformUI = document.querySelector(".uniform-ui-container");
@@ -138,7 +145,7 @@ function onLineWidthChange(event) {
 function onDownloadBtnClick(event) {
     const downloadLink = document.createElement("a");
 
-    underCtx.drawImage(canvas,0,0,CANVAS_WIDTH, CANVAS_HEIGHT);
+    underCtx.drawImage(canvas, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 
     downloadLink.download = "Your_Drawing.png";
     downloadLink.href = (underCanvas.toDataURL("image/png"));
@@ -168,107 +175,107 @@ function onfillClick() {
     underCtx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 }
 
-function onDrawClick(){
-    ctx.globalCompositeOperation="source-over"
+function onDrawClick() {
+    ctx.globalCompositeOperation = "source-over"
 }
 
 function onEraserClick() {
-    ctx.globalCompositeOperation="destination-out";
+    ctx.globalCompositeOperation = "destination-out";
 }
 
 const imgs = new Array();
-const teams = ["doosan","hanwha","kia","kiwoom","kt","lg1","lg2","lotte","nc","samsung","ssg" ];
+const teams = ["doosan", "hanwha", "kia", "kiwoom", "kt", "lg1", "lg2", "lotte", "nc", "samsung", "ssg"];
 
-for (let i=0;i<11; i++) {
+for (let i = 0; i < 11; i++) {
     imgs[i] = new Image();
     const teamName = document.getElementById(teams[i]);
-    imgs[i].src = teamName.src;     
+    imgs[i].src = teamName.src;
 };
 
-function onClickteamCharacter(event){
+function onClickteamCharacter(event) {
     event.preventDefault();
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    for (let i=0;i<11; i++){
-        if (event.target.value === teams[i]){
+    for (let i = 0; i < 11; i++) {
+        if (event.target.value === teams[i]) {
             ctx.drawImage(imgs[i], 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-        };  
+        };
     };
-    }
-   
-    const imgArray = new Array();
-    const uniforms = ["uniform-doosan","uniform-hanwha","uniform-kia","uniform-kiwoom",
-    "uniform-kt","uniform-lg", "uniform-lotte","uniform-nc","uniform-samsung","uniform-ssg"];
+}
 
-    for (let i=0;i<10; i++) {
-        imgArray[i] = new Image();
-        const uniformName = document.getElementById(uniforms[i]);
-        imgArray[i].src = uniformName.src;     
-    };
+const imgArray = new Array();
+const uniforms = ["uniform-doosan", "uniform-hanwha", "uniform-kia", "uniform-kiwoom",
+    "uniform-kt", "uniform-lg", "uniform-lotte", "uniform-nc", "uniform-samsung", "uniform-ssg"];
 
-    function onClickUniform(event){
-        for (let i=0;i<11; i++){
-            if (event.target.value === uniforms[i]){
-                if (event.target.className == "wear-btn") {
-                    ctx.drawImage(imgArray[i], 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT); 
-                    event.target.className= "wear-clicked-btn";
-                    }  else { 
-                        ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-                        event.target.className = "wear-btn"; 
-                        };
-                };  
+for (let i = 0; i < 10; i++) {
+    imgArray[i] = new Image();
+    const uniformName = document.getElementById(uniforms[i]);
+    imgArray[i].src = uniformName.src;
+};
+
+function onClickUniform(event) {
+    for (let i = 0; i < 11; i++) {
+        if (event.target.value === uniforms[i]) {
+            if (event.target.className == "wear-btn") {
+                ctx.drawImage(imgArray[i], 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+                event.target.className = "wear-clicked-btn";
+            } else {
+                ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+                event.target.className = "wear-btn";
             };
-        }
-
-    function onModeSave(){
-        underCtx.drawImage(canvas,0,0,CANVAS_WIDTH, CANVAS_HEIGHT);
-    }
-
-
-    function onModeReset(){
-        ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    }
-
-    function onModeUniformReset(){
-        ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-        for (let i=0;i<11; i++){
-            if (document.querySelector(".wear-clicked-btn")){
-                document.querySelector(".wear-clicked-btn").className = "wear-btn";
-            }
-        }
-    }
-
-    function onModeBatReset(){
-        ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-        for (let i=0;i<11; i++){
-            if (document.querySelector(".bat-clicked-btn")){
-                document.querySelector(".bat-clicked-btn").className = "bat-btn";
-            }
-        }
-    }
-
-    const batArray = new Array();
-    const bats = ["bat-doosan", "bat-hanwha","bat-kia","bat-kiwoom" ,
-    "bat-kt","bat-lg","bat-lotte","bat-nc","bat-samsung","bat-ssg"]
-
-    for (let i=0;i<10; i++) {
-        batArray[i] = new Image();
-        const batName = document.getElementById(bats[i]);
-        batArray[i].src = batName.src;     
+        };
     };
+}
 
-    function onClickBat(event){
-    for (let i=0;i<11; i++){
-        if (event.target.value === bats[i]){
+function onModeSave() {
+    underCtx.drawImage(canvas, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+}
+
+
+function onModeReset() {
+    ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+}
+
+function onModeUniformReset() {
+    ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    for (let i = 0; i < 11; i++) {
+        if (document.querySelector(".wear-clicked-btn")) {
+            document.querySelector(".wear-clicked-btn").className = "wear-btn";
+        }
+    }
+}
+
+function onModeBatReset() {
+    ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    for (let i = 0; i < 11; i++) {
+        if (document.querySelector(".bat-clicked-btn")) {
+            document.querySelector(".bat-clicked-btn").className = "bat-btn";
+        }
+    }
+}
+
+const batArray = new Array();
+const bats = ["bat-doosan", "bat-hanwha", "bat-kia", "bat-kiwoom",
+    "bat-kt", "bat-lg", "bat-lotte", "bat-nc", "bat-samsung", "bat-ssg"]
+
+for (let i = 0; i < 10; i++) {
+    batArray[i] = new Image();
+    const batName = document.getElementById(bats[i]);
+    batArray[i].src = batName.src;
+};
+
+function onClickBat(event) {
+    for (let i = 0; i < 11; i++) {
+        if (event.target.value === bats[i]) {
             if (event.target.className == "bat-btn") {
                 ctx.drawImage(batArray[i], 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-                event.target.className= "bat-clicked-btn";
-                }  else {   
-                    ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-                    event.target.className = "bat-btn"; 
-                };
-            };  
+                event.target.className = "bat-clicked-btn";
+            } else {
+                ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+                event.target.className = "bat-btn";
+            };
         };
-    }
+    };
+}
 
 
 function onFileChange(event) {
@@ -277,10 +284,10 @@ function onFileChange(event) {
     console.log(url);
 }
 
-function onTexting(event){
-    const text= textInput.value;
+function onTexting(event) {
+    const text = textInput.value;
     const fonttype = "serif"
-    if(text !== ""){
+    if (text !== "") {
         ctx.lineWidth = 1;
         ctx.font = `${ctx.textSize}px ${fonttype}`;
         ctx.strokeText(text, event.offsetX, event.offsetY);
@@ -293,18 +300,18 @@ function onTextSizeChange(event) {
     textSizeText.innerText = `text-size: ${event.target.value}`;
 }
 
-function onModeBefore(){
-    ctx.drawImage(img1, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT); 
+function onModeBefore() {
+    ctx.drawImage(img1, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 }
 
-function onclickBackgroundTab(){
+function onclickBackgroundTab() {
     if (backgroundUI.style.display === "" || backgroundUI.style.display === "none") {
         accUI.style.display = "none";
         drawingUI.style.display = "none";
         textUI.style.display = "none";
         uniformUI.style.display = "none";
         teamUI.style.display = "none";
-        backgroundUI.style.display="flex";
+        backgroundUI.style.display = "flex";
     }
 }
 function onClickTeamTab() {
@@ -315,7 +322,7 @@ function onClickTeamTab() {
         uniformUI.style.display = "none";
         backgroundUI.style.display = "none";
         teamUI.style.display = "flex";
-    }else {
+    } else {
         teamUI.style.display = "none";
     }
 }
@@ -372,19 +379,43 @@ function onClickTextTab() {
     }
 }
 
+function onClickTabInTabBat() {
+    if (tabInTabBatUI.style.display === "" || tabInTabBatUI.style.display === "none") {
+        tabInTabEtcUI.style.display = "none";
+
+        tabInTabBatUI.style.display = "flex";
+    } else {
+        tabInTabBatUI.style.display = "none";
+    }
+}
+
+function onClickTabInTabEtc() {
+    if (tabInTabEtcUI.style.display === "" || tabInTabEtcUI.style.display === "none") {
+        tabInTabBatUI.style.display = "none";
+        tabInTabEtcUI.style.display = "flex";
+    } else {
+        tabInTabEtcUI.style.display = "none";
+    }
+}
+
+
+
+
 canvas.addEventListener("mousemove", onMove);
 canvas.addEventListener("mousedown", onMouseDown);
 canvas.addEventListener("mouseup", cancelPainting);
 canvas.addEventListener("mouseleave", cancelPainting);
 canvas.addEventListener("dblclick", onTexting);
 
-backgroundTab.addEventListener("click",onclickBackgroundTab)
+backgroundTab.addEventListener("click", onclickBackgroundTab)
 teamTab.addEventListener("click", onClickTeamTab);
 uniformTab.addEventListener("click", onClickUniformTab);
 accTab.addEventListener("click", onClickAccTab);
 drawingTab.addEventListener("click", onClickDrawingTab);
 textTab.addEventListener("click", onClickTextTab);
 
+tabInTabBat.addEventListener("click", onClickTabInTabBat);
+tabInTabEtc.addEventListener("click", onClickTabInTabEtc);
 
 lineWidth.addEventListener("change", onLineWidthChange);
 textSize.addEventListener("change", onTextSizeChange);

@@ -173,6 +173,15 @@ canvas {
     cursor: pointer;
 }
 
+.tab-in-tab-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
 .background-ui-container {
     width: 90%;
     text-align: center;
@@ -261,7 +270,19 @@ canvas {
     text-align:center;
  }
 
- .bat-btn{
+.acc-btn-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bat-btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.bat-btn{
     all: unset;
     padding: 0.5em;
     margin:0.5rem;
@@ -356,4 +377,12 @@ canvas {
     border-style:solid;
     border-width: 3px;
     text-align:center;
+ }
+
+ #tab-in-tab-bat {
+    display: none;
+ }
+
+ #tab-in-tab-etc {
+    display: none;
  }

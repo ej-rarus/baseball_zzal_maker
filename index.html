@@ -14,7 +14,7 @@
         <canvas id="canvas"></canvas>
       </div>
       <div class="img-cloak">
-        <img id="doosan" src ="src/img/doosan.png" />
+        <img id="doosan" src="src/img/doosan.png" />
         <img id="hanwha" src="src/img/hanwha.png" />
         <img id="kia" src="src/img/kia.png" />
         <img id="kiwoom" src="src/img/kiwoom.png" />
@@ -27,7 +27,7 @@
         <img id="ssg" src="src/img/ssg.png" />
       </div>
       <div class="uniform-cloak">
-        <img id="uniform-doosan" src="src/wear/t-doosan.png">
+        <img id="uniform-doosan" src="src/wear/t-doosan.png" />
         <img id="uniform-hanwha" src="src/wear/t-hanwha.png" />
         <img id="uniform-kia" src="src/wear/t-kia.png" />
         <img id="uniform-kiwoom" src="src/wear/t-kiwoom.png" />
@@ -39,7 +39,7 @@
         <img id="uniform-ssg" src="src/wear/t-ssg.png" />
       </div>
       <div class="bat-cloak">
-        <img id="bat-doosan" src="src/bat/bat-doosan.png">
+        <img id="bat-doosan" src="src/bat/bat-doosan.png" />
         <img id="bat-hanwha" src="src/bat/bat-hanwha.png" />
         <img id="bat-kia" src="src/bat/bat-kia.png" />
         <img id="bat-kiwoom" src="src/bat/bat-kiwoom.png" />
@@ -50,8 +50,6 @@
         <img id="bat-samsung" src="src/bat/bat-samsung.png" />
         <img id="bat-ssg" src="src/bat/bat-ssg.png" />
       </div>
-
-
 
       <div class="ui-container">
         <div class="tab-btn-container">
@@ -64,18 +62,18 @@
         </div>
         <div class="ui-box">
           <div class="background-ui-container">
-            <div class = "color-square">
-            <input type="color" id="color" />
+            <div class="color-square">
+              <input type="color" id="color" />
             </div>
             <div class="color-palette">
               <div
                 class="color-option"
-                style="background-color: #EA2027"
+                style="background-color: #ea2027"
                 data-color="#EA2027"
               ></div>
               <div
                 class="color-option"
-                style="background-color: #FDA7DF"
+                style="background-color: #fda7df"
                 data-color="#FDA7DF"
               ></div>
               <div
@@ -90,14 +88,14 @@
               ></div>
               <div
                 class="color-option"
-                style="background-color: #A3CB38"
+                style="background-color: #a3cb38"
                 data-color="#A3CB38"
               ></div>
               <div
-              class="color-option"
-              style="background-color: #4cd137"
-              data-color="#4cd137"
-            ></div>
+                class="color-option"
+                style="background-color: #4cd137"
+                data-color="#4cd137"
+              ></div>
               <div
                 class="color-option"
                 style="background-color: #00a8ff"
@@ -105,7 +103,7 @@
               ></div>
               <div
                 class="color-option"
-                style="background-color: #0652DD"
+                style="background-color: #0652dd"
                 data-color="#0652DD"
               ></div>
               <div
@@ -126,7 +124,7 @@
             <div class="file-container">
               <input type="file" accept="image/*" id="file" />
             </div>
-            </div>
+          </div>
           <div class="teamchoose-ui-container">
             <div class="team-btn-container">
               <button class="team-btn" id="team_DB" value="doosan">두산</button>
@@ -149,41 +147,76 @@
               <button class="team-btn" id="team_ND" value="nc">NC</button>
               <button class="team-btn" id="team_SD" value="ssg">SSG</button>
             </div>
-            <div class = "save-reset-container">
-              <button class = "save-btn" id = "team-save"> 저장하기</button>
-              <button class = "reset-btn"id = "team-reset"> 초기화하기</button>
+            <div class="save-reset-container">
+              <button class="save-btn" id="team-save">저장하기</button>
+              <button class="reset-btn" id="team-reset">초기화하기</button>
             </div>
           </div>
           <div class="uniform-ui-container">
             <div class="uniform-btn-container">
               <div class="wear-btn-container">
-                <button class="wear-btn" id="wear-DB" value="uniform-doosan">두산</button>
-                <button class="wear-btn" id="wear-LG" value="uniform-lotte">롯데</button>
-                <button class="wear-btn" id="wear-SL" value="uniform-samsung">삼성</button>
-                <button class="wear-btn" id="wear-KH" value="uniform-kiwoom">키움</button>
-                <button class="wear-btn" id="wear-HE" value="uniform-hanwha">한화</button>
+                <button class="wear-btn" id="wear-DB" value="uniform-doosan">
+                  두산
+                </button>
+                <button class="wear-btn" id="wear-LG" value="uniform-lotte">
+                  롯데
+                </button>
+                <button class="wear-btn" id="wear-SL" value="uniform-samsung">
+                  삼성
+                </button>
+                <button class="wear-btn" id="wear-KH" value="uniform-kiwoom">
+                  키움
+                </button>
+                <button class="wear-btn" id="wear-HE" value="uniform-hanwha">
+                  한화
+                </button>
               </div>
               <div class="wear-btn-container">
-                <button class="wear-btn" id="wear-KT" value="uniform-kia">KIA</button>
-                <button class="wear-btn" id="wear-KW" value="uniform-kt">KT</button>
-                <button class="wear-btn" id="wear-LT" value="uniform-lg">LG</button>
-                <button class="wear-btn" id="wear-ND" value="uniform-nc">NC</button>
-                <button class="wear-btn" id="wear-SD" value="uniform-ssg">SSG</button>
+                <button class="wear-btn" id="wear-KT" value="uniform-kia">
+                  KIA
+                </button>
+                <button class="wear-btn" id="wear-KW" value="uniform-kt">
+                  KT
+                </button>
+                <button class="wear-btn" id="wear-LT" value="uniform-lg">
+                  LG
+                </button>
+                <button class="wear-btn" id="wear-ND" value="uniform-nc">
+                  NC
+                </button>
+                <button class="wear-btn" id="wear-SD" value="uniform-ssg">
+                  SSG
+                </button>
               </div>
-              <div class = "save-reset-container">
-                <button class = "save-btn" id = "uniform-save"> 저장하기</button>
-                <button class = "reset-btn"id = "uniform-reset"> 초기화하기</button>
+              <div class="save-reset-container">
+                <button class="save-btn" id="uniform-save">저장하기</button>
+                <button class="reset-btn" id="uniform-reset">초기화하기</button>
               </div>
             </div>
           </div>
           <div class="acc-ui-container">
-            <div class="acc-btn-container">
+            <div class="tab-in-tab-container">
+              <div class="tab-btn" id="tab-in-tab-bat-btn">방망이</div>
+              <div class="tab-btn" id="tab-in-tab-etc-btn">기타</div>
+            </div>
+
+            <div class="acc-btn-container" id="tab-in-tab-bat">
               <div class="bat-btn-container">
-                <button class="bat-btn" id="bat-DB" value="bat-doosan">두산</button>
-                <button class="bat-btn" id="bat-LG" value="bat-lotte">롯데</button>
-                <button class="bat-btn" id="bat-SL" value="bat-samsung">삼성</button>
-                <button class="bat-btn" id="bat-KH" value="bat-kiwoom">키움</button>
-                <button class="bat-btn" id="bat-HE" value="bat-hanwha">한화</button>
+                <button class="bat-btn" id="bat-DB" value="bat-doosan">
+                  두산
+                </button>
+                <button class="bat-btn" id="bat-LG" value="bat-lotte">
+                  롯데
+                </button>
+                <button class="bat-btn" id="bat-SL" value="bat-samsung">
+                  삼성
+                </button>
+                <button class="bat-btn" id="bat-KH" value="bat-kiwoom">
+                  키움
+                </button>
+                <button class="bat-btn" id="bat-HE" value="bat-hanwha">
+                  한화
+                </button>
               </div>
               <div class="bat-btn-container">
                 <button class="bat-btn" id="bat-KT" value="bat-kia">KIA</button>
@@ -192,9 +225,20 @@
                 <button class="bat-btn" id="bat-ND" value="bat-nc">NC</button>
                 <button class="bat-btn" id="bat-SD" value="bat-ssg">SSG</button>
               </div>
-              <div class = "save-reset-container">
-                <button class = "save-btn" id = "bat-save"> 저장하기</button>
-                <button class = "reset-btn"id = "bat-reset"> 초기화하기</button>
+              <div class="save-reset-container">
+                <button class="save-btn" id="bat-save">저장하기</button>
+                <button class="reset-btn" id="bat-reset">초기화하기</button>
+              </div>
+            </div>
+
+            <div class="acc-btn-container" id="tab-in-tab-etc">
+              <div class="bat-btn-container">
+                <div class="bat-btn">머리띠</div>
+                <div class="bat-btn">목걸이</div>
+              </div>
+              <div class="save-reset-container">
+                <button class="save-btn" id="bat-save">저장하기</button>
+                <button class="reset-btn" id="bat-reset">초기화하기</button>
               </div>
             </div>
           </div>
@@ -209,18 +253,18 @@
               step="0.5"
             />
             <span id="line-width-text">line-width: 5</span>
-            <div class = "color-square">
+            <div class="color-square">
               <input type="color" id="draw-color" />
             </div>
             <div class="color-palette">
               <div
                 class="color-option"
-                style="background-color: #EA2027"
+                style="background-color: #ea2027"
                 data-color="#EA2027"
               ></div>
               <div
                 class="color-option"
-                style="background-color: #FDA7DF"
+                style="background-color: #fda7df"
                 data-color="#FDA7DF"
               ></div>
               <div
@@ -235,7 +279,7 @@
               ></div>
               <div
                 class="color-option"
-                style="background-color: #A3CB38"
+                style="background-color: #a3cb38"
                 data-color="#A3CB38"
               ></div>
               <div
@@ -250,7 +294,7 @@
               ></div>
               <div
                 class="color-option"
-                style="background-color: #0652DD"
+                style="background-color: #0652dd"
                 data-color="#0652DD"
               ></div>
               <div
@@ -266,7 +310,7 @@
             </div>
             <div class="btn-container">
               <button id="draw-btn" class="basic-btn">Draw</button>
-              <button class = "save-btn" id = "draw-save"> 저장하기</button>
+              <button class="save-btn" id="draw-save">저장하기</button>
               <button id="eraser-btn" class="basic-btn">ERASE</button>
               <button id="reset-btn" class="basic-btn">RESET</button>
             </div>
@@ -281,18 +325,18 @@
               step="5"
             />
             <span id="text-size-text">text-size: 40</span>
-            <div class = "color-square">
+            <div class="color-square">
               <input type="color" id="text-color" />
             </div>
             <div class="color-palette">
               <div
                 class="color-option"
-                style="background-color: #EA2027"
+                style="background-color: #ea2027"
                 data-color="#EA2027"
               ></div>
               <div
                 class="color-option"
-                style="background-color: #FDA7DF"
+                style="background-color: #fda7df"
                 data-color="#FDA7DF"
               ></div>
               <div
@@ -307,10 +351,10 @@
               ></div>
               <div
                 class="color-option"
-                style="background-color: #A3CB38"
+                style="background-color: #a3cb38"
                 data-color="#A3CB38"
               ></div>
-              
+
               <div
                 class="color-option"
                 style="background-color: #4cd137"
@@ -323,7 +367,7 @@
               ></div>
               <div
                 class="color-option"
-                style="background-color: #0652DD"
+                style="background-color: #0652dd"
                 data-color="#0652DD"
               ></div>
               <div
@@ -337,10 +381,14 @@
                 data-color="#487eb0"
               ></div>
             </div>
-            <input type = "text" placeholder="Write and double click" id = "text"/>
-            <div class = "return-container">
-              <button class = "return-btn" id = "return-before"> <- 전으로 돌아가기 </button>
-              <button class = "return-btn"id = "return-after"> 뒤로 돌아가기 -> </button>
+            <input type="text" placeholder="Write and double click" id="text" />
+            <div class="return-container">
+              <button class="return-btn" id="return-before">
+                <- 전으로 돌아가기
+              </button>
+              <button class="return-btn" id="return-after">
+                뒤로 돌아가기 ->
+              </button>
             </div>
           </div>
         </div>
