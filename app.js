@@ -55,6 +55,7 @@ const drawBtn = document.getElementById("draw-btn");
 const eraserBtn = document.getElementById("eraser-btn");
 const resetBtn = document.getElementById("reset-btn");
 
+const gotoTopBtn = document.getElementById("gotoTop");
 
 const downloadBtn = document.getElementById("export-btn");
 const teamDB = document.getElementById("team_DB");
@@ -150,6 +151,10 @@ function onDownloadBtnClick(event) {
     downloadLink.download = "Your_Drawing.png";
     downloadLink.href = (underCanvas.toDataURL("image/png"));
     downloadLink.click();
+}
+
+function onGotoTopBtnclick(event) {
+    window.scrollTo({ top: 0, behavior: 'smooth'});
 }
 
 
@@ -422,6 +427,8 @@ textSize.addEventListener("change", onTextSizeChange);
 color.addEventListener("change", onColorChange);
 
 downloadBtn.addEventListener("click", onDownloadBtnClick);
+
+gotoTopBtn.addEventListener("click", onGotoTopBtnclick);
 
 colorOptions.forEach(color => color.addEventListener("click", onColorClick));
 
