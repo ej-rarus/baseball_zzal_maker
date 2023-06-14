@@ -4,6 +4,7 @@ const lineWidthText = document.getElementById("line-width-text");
 const textSize = document.getElementById("text-size");
 const textSizeText = document.getElementById("text-size-text");
 const color = document.getElementById("color");
+const colorOption = document.querySelector(".color-option");
 const Drawcolor = document.getElementById("draw-color");
 const textColor = document.getElementById("text-color");
 const colorOptions = Array.from(document.getElementsByClassName("color-option"));
@@ -213,9 +214,6 @@ function onColorClick(event) {
     color.value = colorValue;
     Drawcolor.value = colorValue;
     textColor.value = colorValue;
-}
-
-function onfillClick() {
     underCtx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 }
 
@@ -480,7 +478,6 @@ gotoTopBtn.addEventListener("click", onGotoTopBtnclick);
 
 colorOptions.forEach(color => color.addEventListener("click", onColorClick));
 
-fillBtn.addEventListener("click", onfillClick);
 drawBtn.addEventListener("click", onDrawClick);
 eraserBtn.addEventListener("click", onEraserClick);
 resetBtn.addEventListener("click", onModeReset);
