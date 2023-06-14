@@ -37,9 +37,11 @@ const drawingTab = document.getElementById("drawing-tab");
 const textTab = document.getElementById("text-tab");
 
 const tabInTabBat = document.getElementById("tab-in-tab-bat-btn");
+const tabInTabCap = document.getElementById("tab-in-tab-cap-btn");
 const tabInTabEtc = document.getElementById("tab-in-tab-etc-btn");
 
 const tabInTabBatUI = document.getElementById("tab-in-tab-bat");
+const tabInTabCapUI = document.getElementById("tab-in-tab-cap");
 const tabInTabEtcUI = document.getElementById("tab-in-tab-etc");
 
 
@@ -95,6 +97,15 @@ const batKW = document.getElementById("bat-KW");
 const batLT = document.getElementById("bat-LT");
 const batND = document.getElementById("bat-ND");
 const batSD = document.getElementById("bat-SD");
+
+const capDB = document.getElementById("cap-DB")
+const capLG = document.getElementById("cap-LG")
+const capSL = document.getElementById("cap-SL")
+const capHE = document.getElementById("cap-HE")
+const capKT = document.getElementById("cap-KT")
+const capKW = document.getElementById("cap-KW")
+const capND = document.getElementById("cap-ND")
+const capSD = document.getElementById("cap-SD")
 
 const accDB = document.getElementById("acc-DB");
 const accLG = document.getElementById("acc-LG");
@@ -270,6 +281,31 @@ function onClickUniform(event) {
 }
 
 
+const capArray = new Array();
+const caps = ["cap-doosan","cap-hanwha","cap-kia","cap-kt","cap-lotte","cap-nc","cap-samsung","cap-ssg"]
+
+for (let i = 0; i < 8; i++) {
+    capArray[i] = new Image();
+    const capName = document.getElementById(caps[i]);
+    capArray[i].src = capName.src;
+};
+
+function onClickCap(event) {
+    event.preventDefault();
+    accCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    for (let i = 0; i < 8; i++) {
+        if (event.target.value === caps[i]) {
+            if (event.target.className == "cap-btn") {
+                accCtx.drawImage(capArray[i], 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+                event.target.className = "cap-clicked-btn";
+            } else {
+                accCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+                event.target.className = "cap-btn";
+            };
+        };
+    };
+}
+
 const batArray = new Array();
 const bats = ["bat-doosan", "bat-hanwha", "bat-kia", "bat-kiwoom",
     "bat-kt", "bat-lg", "bat-lotte", "bat-nc", "bat-samsung", "bat-ssg"]
@@ -433,16 +469,27 @@ function onClickTextTab() {
 function onClickTabInTabBat() {
     if (tabInTabBatUI.style.display === "" || tabInTabBatUI.style.display === "none") {
         tabInTabEtcUI.style.display = "none";
-
+        tabInTabCapUI.style.display = "none";
         tabInTabBatUI.style.display = "flex";
     } else {
         tabInTabBatUI.style.display = "none";
     }
 }
 
+function onClickTabInTabCap() {
+    if (tabInTabCapUI.style.display === "" || tabInTabCapUI.style.display === "none") {
+        tabInTabEtcUI.style.display = "none";
+        tabInTabBatUI.style.display = "none";
+        tabInTabCapUI.style.display = "flex";
+    } else {
+        tabInTabCapUI.style.display = "none";
+    }
+}
+
 function onClickTabInTabEtc() {
     if (tabInTabEtcUI.style.display === "" || tabInTabEtcUI.style.display === "none") {
         tabInTabBatUI.style.display = "none";
+        tabInTabCapUI.style.display = "none";
         tabInTabEtcUI.style.display = "flex";
     } else {
         tabInTabEtcUI.style.display = "none";
@@ -466,6 +513,7 @@ drawingTab.addEventListener("click", onClickDrawingTab);
 textTab.addEventListener("click", onClickTextTab);
 
 tabInTabBat.addEventListener("click", onClickTabInTabBat);
+tabInTabCap.addEventListener("click", onClickTabInTabCap);
 tabInTabEtc.addEventListener("click", onClickTabInTabEtc);
 
 lineWidth.addEventListener("change", onLineWidthChange);
@@ -516,6 +564,15 @@ batKW.addEventListener("click", onClickBat);
 batLT.addEventListener("click", onClickBat);
 batND.addEventListener("click", onClickBat);
 batSD.addEventListener("click", onClickBat);
+
+capDB.addEventListener("click", onClickCap);
+capLG.addEventListener("click", onClickCap);
+capSL.addEventListener("click", onClickCap);
+capHE.addEventListener("click", onClickCap);
+capKT.addEventListener("click", onClickCap);
+capKW.addEventListener("click", onClickCap);
+capND.addEventListener("click", onClickCap);
+capSD.addEventListener("click", onClickCap);
 
 accDB.addEventListener("click", onClickAcc);
 accLG.addEventListener("click", onClickAcc);

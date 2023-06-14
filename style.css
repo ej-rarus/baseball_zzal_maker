@@ -167,6 +167,9 @@ a {
     display: none;
 }
 
+.cap-cloak {
+    display: none;
+}
 .acc-cloak {
     display: none;
 }
@@ -310,13 +313,20 @@ a {
     justify-content: center;
 }
 
+.cap-btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 .bat-btn-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
-.bat-btn{
+
+ .bat-btn, .cap-btn, .acc-btn {
     all: unset;
     padding: 0.5em;
     margin:0.5rem;
@@ -332,39 +342,7 @@ a {
     text-align:center;
  }
 
- .bat-clicked-btn{
-    all: unset;
-    padding: 0.5em;
-    margin:0.5rem;
-    width: 4rem;
-    font-size: 13px;
-    font-family:'Noto Sans' sans-serif;
-    background-color: palegreen;
-    border-color: black;
-    border-width: 10px ;
-    color: olivedrab;
-    cursor: pointer;
-    border-radius: 5px;
-    text-align:center;
- }
-
- .acc-btn{
-    all: unset;
-    padding: 0.5em;
-    margin:0.5rem;
-    width: 4rem;
-    font-size: 13px;
-    font-family:'Noto Sans' sans-serif;
-    background-color: white;
-    border-color: black;
-    border-width: 10px ;
-    color: orange;
-    cursor: pointer;
-    border-radius: 5px;
-    text-align:center;
- }
-
- .acc-clicked-btn{
+ .acc-clicked-btn, .cap-clicked-btn, .bat-clicked-btn{
     all: unset;
     padding: 0.5em;
     margin:0.5rem;
@@ -445,6 +423,10 @@ a {
  }
 
  #tab-in-tab-bat {
+    display: none;
+ }
+
+ #tab-in-tab-cap {
     display: none;
  }
 
