@@ -2,6 +2,12 @@
     padding: 0;
     margin: 0;
 }
+:root {
+    
+    --main-font: 'Noto Sans KR', sans-serif;
+    --sub-font: 'Lato', sans-serif;
+ 
+}
 
 body {
     background-color: white;
@@ -19,10 +25,21 @@ canvas {
     height: 400px;
 }
 
+a {
+    text-decoration: none;
+}
+
 .header {
     display: flex;
     justify-content: center;
     margin-top: 2rem;
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: var(--main-font);
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+
 }
 
 .container {
