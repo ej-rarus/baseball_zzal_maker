@@ -47,6 +47,8 @@ canvas {
     display: flex;
     justify-content: center;
     align-items: center;
+    position:relative;
+    top: 5rem;
 }
 
 #under-canvas {
@@ -56,7 +58,7 @@ canvas {
 }
 
 #team-canvas {
-    position: relative;
+    position: absolute;
     z-index: 1;
     top:0;
 }
@@ -169,6 +171,7 @@ canvas {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 30rem;
 }
 
 .ui-box {
@@ -214,8 +217,8 @@ canvas {
 .background-ui-container {
     width: 90%;
     text-align: center;
-    display: inline-block;
-    direction: column;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     margin:0;
     padding-top: 1rem;

@@ -189,7 +189,7 @@ function onDownloadBtnClick(event) {
 }
 
 function onGotoTopBtnclick(event) {
-    window.scrollTo({ top: 0, behavior: 'smooth'});
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 
@@ -264,7 +264,8 @@ function onClickUniform(event) {
             if (event.target.className == "wear-btn") {
                 event.target.className += " active";
                 uniformCtx.drawImage(imgArray[i], 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-            } else {event.target.className = "wear-btn";
+            } else {
+                event.target.className = "wear-btn";
             }
         }
     };
@@ -328,7 +329,7 @@ function onFileChange(event) {
     console.log(url);
     newFile = new Image();
     newFile.src = url;
-    underCtx.drawImage(newFile, 0,0,CANVAS_WIDTH, CANVAS_HEIGHT);
+    underCtx.drawImage(newFile, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 }
 
 function onTexting(event) {
@@ -336,18 +337,18 @@ function onTexting(event) {
     const fonttype = "serif"
     if (text !== "") {
         textCtx.lineWidth = 1;
-        textCtx.font = `${textCtx.textSize}px ${fonttype}`;
-        textCtx.strokeText(text, event.offsetX, event.offsetY);
+        textCtx.font = `${textSize.value}px ${fonttype}`;
+        textCtx.fillText(text, event.offsetX, event.offsetY);
     }
 
 }
 
-function onModeReset(){
-    drawCtx.clearRect(0,0,CANVAS_WIDTH, CANVAS_HEIGHT);
+function onModeReset() {
+    drawCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 }
 
-function onModeTextReset(){
-    textCtx.clearRect(0,0,CANVAS_WIDTH, CANVAS_HEIGHT);
+function onModeTextReset() {
+    textCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 }
 
 function onTextSizeChange(event) {
