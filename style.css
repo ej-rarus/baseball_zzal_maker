@@ -6,6 +6,8 @@
     
     --main-font: 'Noto Sans KR', sans-serif;
     --sub-font: 'Lato', sans-serif;
+
+    --theme-color1: '';
  
 }
 
@@ -29,7 +31,7 @@ a {
     text-decoration: none;
 }
 
-.header {
+.header > a {
     display: flex;
     justify-content: center;
     margin-top: 2rem;
@@ -39,7 +41,6 @@ a {
     cursor: pointer;
     text-decoration: none;
     color: black;
-
 }
 
 .container {
@@ -216,12 +217,17 @@ a {
 
 
 .tab-btn {
+    text-align: center;
+    align-items: center;
+    height: 100%;
     display: flex;
-    background-color: aqua;
-    border-radius: 15px;
-    padding: 0.5rem;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
+    background-color: white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-left: 0.05rem;
+    margin-right: 0.05rem;
     cursor: pointer;
 }
 

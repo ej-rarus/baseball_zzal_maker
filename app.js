@@ -282,7 +282,7 @@ function onClickUniform(event) {
 
 
 const capArray = new Array();
-const caps = ["cap-doosan","cap-hanwha","cap-kia","cap-kt","cap-lotte","cap-nc","cap-samsung","cap-ssg"]
+const caps = ["cap-doosan", "cap-hanwha", "cap-kia", "cap-kt", "cap-lotte", "cap-nc", "cap-samsung", "cap-ssg"]
 
 for (let i = 0; i < 8; i++) {
     capArray[i] = new Image();
@@ -394,75 +394,125 @@ function onTextSizeChange(event) {
 function onclickBackgroundTab() {
     if (backgroundUI.style.display === "" || backgroundUI.style.display === "none") {
         accUI.style.display = "none";
+        accTab.style.backgroundColor = "white";
         drawingUI.style.display = "none";
+        drawingTab.style.backgroundColor = "white";
         textUI.style.display = "none";
+        textTab.style.backgroundColor = "white";
         uniformUI.style.display = "none";
+        uniformTab.style.backgroundColor = "white";
         teamUI.style.display = "none";
+        teamTab.style.backgroundColor = "white";
         backgroundUI.style.display = "flex";
+        backgroundTab.style.backgroundColor = "lightgrey";
+    } else {
+        backgroundUI.style.display = "none";
+        backgroundTab.style.backgroundColor = "white";
     }
 }
 function onClickTeamTab() {
     if (teamUI.style.display === "" || teamUI.style.display === "none") {
         accUI.style.display = "none";
+        accTab.style.backgroundColor = "white";
         drawingUI.style.display = "none";
+        drawingTab.style.backgroundColor = "white";
         textUI.style.display = "none";
+        textTab.style.backgroundColor = "white";
         uniformUI.style.display = "none";
+        uniformTab.style.backgroundColor = "white";
         backgroundUI.style.display = "none";
+        backgroundTab.style.backgroundColor = "white";
+
         teamUI.style.display = "flex";
+        teamTab.style.backgroundColor = "lightgrey";
+
     } else {
         teamUI.style.display = "none";
+        teamTab.style.backgroundColor = "white";
     }
 }
 
 function onClickUniformTab() {
     if (uniformUI.style.display === "" || uniformUI.style.display === "none") {
         teamUI.style.display = "none";
+        teamTab.style.backgroundColor = "white";
         accUI.style.display = "none";
+        accTab.style.backgroundColor = "white";
         drawingUI.style.display = "none";
+        drawingTab.style.backgroundColor = "white";
         textUI.style.display = "none";
+        textTab.style.backgroundColor = "white";
         backgroundUI.style.display = "none";
+        backgroundTab.style.backgroundColor = "white";
+
         uniformUI.style.display = "flex";
+        uniformTab.style.backgroundColor = "lightgrey";
     } else {
         uniformUI.style.display = "none";
+        uniformTab.style.backgroundColor = "white";
     }
 }
 
 function onClickAccTab() {
     if (accUI.style.display === "" || accUI.style.display === "none") {
         teamUI.style.display = "none";
+        teamTab.style.backgroundColor = "white";
         drawingUI.style.display = "none";
+        drawingTab.style.backgroundColor = "white";
         textUI.style.display = "none";
+        textTab.style.backgroundColor = "white";
         uniformUI.style.display = "none";
+        uniformTab.style.backgroundColor = "white";
         backgroundUI.style.display = "none";
+        backgroundTab.style.backgroundColor = "white";
+
         accUI.style.display = "flex";
+        accTab.style.backgroundColor = "lightgrey";
     } else {
         accUI.style.display = "none";
+        accTab.style.backgroundColor = "white";
     }
 }
 
 function onClickDrawingTab() {
     if (drawingUI.style.display === "" || drawingUI.style.display === "none") {
         teamUI.style.display = "none";
+        teamTab.style.backgroundColor = "white";
         accUI.style.display = "none";
+        accTab.style.backgroundColor = "white";
         textUI.style.display = "none";
+        textTab.style.backgroundColor = "white";
         uniformUI.style.display = "none";
+        uniformTab.style.backgroundColor = "white";
         backgroundUI.style.display = "none";
+        backgroundTab.style.backgroundColor = "white";
+
         drawingUI.style.display = "flex";
+        drawingTab.style.backgroundColor = "lightgrey";
     } else {
         drawingUI.style.display = "none";
+        drawingTab.style.backgroundColor = "white";
     }
 }
 
 function onClickTextTab() {
     if (textUI.style.display === "" || textUI.style.display === "none") {
         teamUI.style.display = "none";
+        teamTab.style.backgroundColor = "white";
         accUI.style.display = "none";
+        accTab.style.backgroundColor = "white";
         drawingUI.style.display = "none";
+        drawingTab.style.backgroundColor = "white";
         uniformUI.style.display = "none";
+        uniformTab.style.backgroundColor = "white";
         backgroundUI.style.display = "none";
+        backgroundTab.style.backgroundColor = "white";
+
         textUI.style.display = "flex";
+        textTab.style.backgroundColor = "lightgrey";
     } else {
         textUI.style.display = "none";
+        textTab.style.backgroundColor = "white";
     }
 }
 
