@@ -10,6 +10,8 @@ const colorOption = document.querySelector(".color-option");
 const Drawcolor = document.getElementById("draw-color");
 const textColor = document.getElementById("text-color");
 const colorOptions = Array.from(document.getElementsByClassName("color-option"));
+const colorDrawOptions = Array.from(document.getElementsByClassName("color-draw-option"));
+const colorTextOptions = Array.from(document.getElementsByClassName("color-text-option"));
 
 const textCanvas = document.getElementById("text-canvas");
 const drawCanvas = document.getElementById("draw-canvas");
@@ -214,9 +216,22 @@ function onColorChange(event) {
     drawCtx.fillStyle = event.target.value;
     underCtx.strokeStyle = event.target.value;
     underCtx.fillStyle = event.target.value;
+    console.log(event.target.value);
 }
 
 function onColorClick(event) {
+    const colorValue = event.target.dataset.color;
+    underCtx.strokeStyle = colorValue;
+    underCtx.fillStyle = colorValue;
+    textCtx.strokeStyle = colorValue;
+    textCtx.fillStyle = colorValue;
+    textColor.value = colorValue;
+    color.value = colorValue;
+    underCtx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+}
+
+
+function onColorDrawClick(event) {
     const colorValue = event.target.dataset.color;
     textCtx.strokeStyle = colorValue;
     textCtx.fillStyle = colorValue;
@@ -227,7 +242,6 @@ function onColorClick(event) {
     color.value = colorValue;
     Drawcolor.value = colorValue;
     textColor.value = colorValue;
-    underCtx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 }
 
 function onDrawClick() {
@@ -578,6 +592,8 @@ downloadBtn.addEventListener("click", onDownloadBtnClick);
 gotoTopBtn.addEventListener("click", onGotoTopBtnclick);
 
 colorOptions.forEach(color => color.addEventListener("click", onColorClick));
+colorDrawOptions.forEach(color => color.addEventListener("click", onColorDrawClick));
+colorTextOptions.forEach(color => color.addEventListener("click", onColorDrawClick));
 
 drawBtn.addEventListener("click", onDrawClick);
 eraserBtn.addEventListener("click", onEraserClick);
