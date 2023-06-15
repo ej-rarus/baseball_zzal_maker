@@ -1,3 +1,5 @@
+const root = document.documentElement;
+const rootStyle = getComputedStyle(root);
 
 const lineWidth = document.getElementById("line-width");
 const lineWidthText = document.getElementById("line-width-text");
@@ -403,8 +405,9 @@ function onclickBackgroundTab() {
         uniformTab.style.backgroundColor = "white";
         teamUI.style.display = "none";
         teamTab.style.backgroundColor = "white";
+
         backgroundUI.style.display = "flex";
-        backgroundTab.style.backgroundColor = "lightgrey";
+        backgroundTab.style.setProperty("background-color", rootStyle.getPropertyValue("--theme-color-a"));
     } else {
         backgroundUI.style.display = "none";
         backgroundTab.style.backgroundColor = "white";
@@ -424,7 +427,7 @@ function onClickTeamTab() {
         backgroundTab.style.backgroundColor = "white";
 
         teamUI.style.display = "flex";
-        teamTab.style.backgroundColor = "lightgrey";
+        teamTab.style.setProperty("background-color", rootStyle.getPropertyValue("--theme-color-b"));
 
     } else {
         teamUI.style.display = "none";
@@ -446,7 +449,7 @@ function onClickUniformTab() {
         backgroundTab.style.backgroundColor = "white";
 
         uniformUI.style.display = "flex";
-        uniformTab.style.backgroundColor = "lightgrey";
+        uniformTab.style.setProperty("background-color", rootStyle.getPropertyValue("--theme-color-c"));
     } else {
         uniformUI.style.display = "none";
         uniformTab.style.backgroundColor = "white";
@@ -467,7 +470,7 @@ function onClickAccTab() {
         backgroundTab.style.backgroundColor = "white";
 
         accUI.style.display = "flex";
-        accTab.style.backgroundColor = "lightgrey";
+        accTab.style.setProperty("background-color", rootStyle.getPropertyValue("--theme-color-d"));
     } else {
         accUI.style.display = "none";
         accTab.style.backgroundColor = "white";
@@ -488,7 +491,7 @@ function onClickDrawingTab() {
         backgroundTab.style.backgroundColor = "white";
 
         drawingUI.style.display = "flex";
-        drawingTab.style.backgroundColor = "lightgrey";
+        drawingTab.style.setProperty("background-color", rootStyle.getPropertyValue("--theme-color-e"));
     } else {
         drawingUI.style.display = "none";
         drawingTab.style.backgroundColor = "white";
@@ -509,7 +512,7 @@ function onClickTextTab() {
         backgroundTab.style.backgroundColor = "white";
 
         textUI.style.display = "flex";
-        textTab.style.backgroundColor = "lightgrey";
+        textTab.style.setProperty("background-color", rootStyle.getPropertyValue("--theme-color-f"));
     } else {
         textUI.style.display = "none";
         textTab.style.backgroundColor = "white";

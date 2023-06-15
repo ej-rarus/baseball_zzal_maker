@@ -4,9 +4,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon/favicon-16x16.png"
+    />
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -79,7 +93,7 @@
         <img id="acc-ssg" src="src/acc/acc-ssg.png" />
       </div>
 
-           <div class="cap-cloak">
+      <div class="cap-cloak">
         <img id="cap-doosan" src="src/cap/cap-doosan.png" />
         <img id="cap-hanwha" src="src/cap/cap-hanwha.png" />
         <img id="cap-kia" src="src/cap/cap-kia.png" />
@@ -186,40 +200,38 @@
           </div>
           <div class="uniform-ui-container">
             <div class="uniform-btn-container">
-              <div class="wear-btn-container">
-                <button class="wear-btn" id="wear-DB" value="uniform-doosan">
-                  두산
-                </button>
-                <button class="wear-btn" id="wear-LG" value="uniform-lotte">
-                  롯데
-                </button>
-                <button class="wear-btn" id="wear-SL" value="uniform-samsung">
-                  삼성
-                </button>
-                <button class="wear-btn" id="wear-KH" value="uniform-kiwoom">
-                  키움
-                </button>
-                <button class="wear-btn" id="wear-HE" value="uniform-hanwha">
-                  한화
-                </button>
-              </div>
-              <div class="wear-btn-container">
-                <button class="wear-btn" id="wear-KT" value="uniform-kia">
-                  KIA
-                </button>
-                <button class="wear-btn" id="wear-KW" value="uniform-kt">
-                  KT
-                </button>
-                <button class="wear-btn" id="wear-LT" value="uniform-lg">
-                  LG
-                </button>
-                <button class="wear-btn" id="wear-ND" value="uniform-nc">
-                  NC
-                </button>
-                <button class="wear-btn" id="wear-SD" value="uniform-ssg">
-                  SSG
-                </button>
-              </div>
+              <button class="wear-btn" id="wear-DB" value="uniform-doosan">
+                두산
+              </button>
+              <button class="wear-btn" id="wear-LG" value="uniform-lotte">
+                롯데
+              </button>
+              <button class="wear-btn" id="wear-SL" value="uniform-samsung">
+                삼성
+              </button>
+              <button class="wear-btn" id="wear-KH" value="uniform-kiwoom">
+                키움
+              </button>
+              <button class="wear-btn" id="wear-HE" value="uniform-hanwha">
+                한화
+              </button>
+            </div>
+            <div class="uniform-btn-container">
+              <button class="wear-btn" id="wear-KT" value="uniform-kia">
+                KIA
+              </button>
+              <button class="wear-btn" id="wear-KW" value="uniform-kt">
+                KT
+              </button>
+              <button class="wear-btn" id="wear-LT" value="uniform-lg">
+                LG
+              </button>
+              <button class="wear-btn" id="wear-ND" value="uniform-nc">
+                NC
+              </button>
+              <button class="wear-btn" id="wear-SD" value="uniform-ssg">
+                SSG
+              </button>
             </div>
           </div>
           <div class="acc-ui-container">
@@ -378,6 +390,12 @@
           </div>
           <div class="text-ui-container">
             <input
+              type="text"
+              placeholder="텍스트를 입력하고 원하는 위치에 더블클릭"
+              id="text"
+            />
+
+            <input
               id="text-size"
               type="range"
               min="20"
@@ -385,6 +403,7 @@
               value="40"
               step="5"
             />
+
             <span id="text-size-text">text-size: 40</span>
             <div class="color-square">
               <input type="color" id="text-color" />
@@ -442,13 +461,12 @@
                 data-color="#487eb0"
               ></div>
             </div>
-            <input type="text" placeholder="Write and double click" id="text" />
             <button id="text-reset-btn" class="basic-btn">RESET</button>
           </div>
         </div>
       </div>
 
-      <button id="export-btn">Download Your Drawing</button>
+      <button id="export-btn" role="button">짤 다운로드</button>
       <button id="gotoTop">Top↑</button>
     </div>
 
