@@ -11,8 +11,8 @@
     --theme-color-b: #fd9644;
     --theme-color-c: #fed330;
     --theme-color-d: #26de81;
-    --theme-color-e: #2bcbba;
-    --theme-color-f: #4b7bec;
+    --theme-color-e: #56b8fe;
+    --theme-color-f: #6b4bec;
  
 }
 
@@ -297,14 +297,18 @@ a {
     border-left: 0.5px solid gray;
     border-right: 0.5px solid gray;
     border-bottom: none;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 95%;
 
 }
 
 .tab-in-tab-container {
     display: flex;
     flex-direction: column;
-    justify-content: left;
-    align-items: center;
+    justify-content: space-around;
+    align-items: flex-start;
+    height: 300%;
+
 }
 
 
@@ -334,7 +338,6 @@ a {
 }
 
 .team-btn{
-  all: unset;
   padding: 0.5em;
   margin:0.5rem;
   width: 4rem;
@@ -391,13 +394,13 @@ a {
 .acc-btn-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .cap-btn-container {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content:center;
 }
 
 .bat-btn-container {
@@ -406,17 +409,22 @@ a {
     justify-content: center;
 }
 
+.etc-btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 
  .bat-btn, .cap-btn, .acc-btn {
-    all: unset;
     padding: 0.5em;
     margin:0.5rem;
     width: 4rem;
-    font-size: 13px;
+    font-size: 80%;
     font-family:'Noto Sans' sans-serif;
     background-color: white;
     border-color: black;
-    border-width: 10px ;
+    border-width: 1px ;
     color: orange;
     cursor: pointer;
     border-radius: 5px;
@@ -424,7 +432,6 @@ a {
  }
 
  .acc-clicked-btn, .cap-clicked-btn, .bat-clicked-btn{
-    all: unset;
     padding: 0.5em;
     margin:0.5rem;
     width: 4rem;
@@ -432,7 +439,7 @@ a {
     font-family:'Noto Sans' sans-serif;
     background-color: palegreen;
     border-color: black;
-    border-width: 10px ;
+    border-width: 3px ;
     color: olivedrab;
     cursor: pointer;
     border-radius: 5px;
@@ -452,7 +459,6 @@ a {
  }
 
 .wear-btn{
-    all: unset;
     padding: 0.5em;
     margin:0.5rem;
     width: 3rem;
