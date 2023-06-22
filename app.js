@@ -16,6 +16,7 @@ const colorTextOptions = Array.from(document.getElementsByClassName("color-text-
 const textCanvas = document.getElementById("text-canvas");
 const drawCanvas = document.getElementById("draw-canvas");
 const accCanvas = document.getElementById("acc-canvas");
+const capCanvas = document.getElementById("cap-canvas");
 const batCanvas = document.getElementById("bat-canvas");
 const uniformCanvas = document.getElementById("uniform-canvas");
 const teamCanvas = document.getElementById("team-canvas");
@@ -24,6 +25,7 @@ const underCanvas = document.getElementById("under-canvas");
 const textCtx = textCanvas.getContext("2d");
 const drawCtx = drawCanvas.getContext("2d");
 const accCtx = accCanvas.getContext("2d");
+const capCtx = capCanvas.getContext("2d");
 const batCtx = batCanvas.getContext("2d");
 const uniformCtx = uniformCanvas.getContext("2d");
 const teamCtx = teamCanvas.getContext("2d");
@@ -130,6 +132,8 @@ drawCanvas.width = CANVAS_WIDTH;
 drawCanvas.height = CANVAS_HEIGHT;
 accCanvas.width = CANVAS_WIDTH;
 accCanvas.height = CANVAS_HEIGHT;
+capCanvas.width = CANVAS_WIDTH;
+capCanvas.height = CANVAS_HEIGHT;
 batCanvas.width = CANVAS_WIDTH;
 batCanvas.height = CANVAS_HEIGHT;
 uniformCanvas.width = CANVAS_WIDTH;
@@ -142,6 +146,7 @@ underCanvas.height = CANVAS_HEIGHT;
 textCtx.lineWidth = lineWidth.value;
 drawCtx.lineWidth = lineWidth.value;
 accCtx.lineWidth = lineWidth.value;
+capCtx.lineWidth = lineWidth.value;
 batCtx.lineWidth = lineWidth.value;
 uniformCtx.lineWidth = lineWidth.value;
 teamCtx.lineWidth = lineWidth.value;
@@ -176,6 +181,7 @@ function onMove(event) {
     drawCtx.moveTo(event.offsetX, event.offsetY);
 }
 
+
 function onMouseDown() {
     isPainting = true;
 }
@@ -195,6 +201,7 @@ function onDownloadBtnClick(event) {
     underCtx.drawImage(teamCanvas, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     underCtx.drawImage(uniformCanvas, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     underCtx.drawImage(batCanvas, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    underCtx.drawImage(capCanvas, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     underCtx.drawImage(accCanvas, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     underCtx.drawImage(drawCanvas, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     underCtx.drawImage(textCanvas, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
@@ -285,16 +292,16 @@ function onClickUniform(event) {
     event.preventDefault();
     uniformCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     for (let i = 0; i < 10; i++) {
-        if (event.target.value === uniforms[i]) {
-            if (event.target.className == "wear-btn") {
-                event.target.className += " active";
+        if ((event.target.value === uniforms[i])&&(event.target.className == "wear-btn")) {
                 uniformCtx.drawImage(imgArray[i], 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-            } else {
+                event.target.className = "wear-clicked-btn";
+            } 
+        else if ((event.target.value === uniforms[i])&&(event.target.className == "wear-clicked-btn")){
+                uniformCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);    
                 event.target.className = "wear-btn";
             }
         }
-    };
-}
+    }
 
 
 const capArray = new Array();
@@ -306,21 +313,22 @@ for (let i = 0; i < 8; i++) {
     capArray[i].src = capName.src;
 };
 
+
 function onClickCap(event) {
     event.preventDefault();
-    accCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    for (let i = 0; i < 8; i++) {
-        if (event.target.value === caps[i]) {
-            if (event.target.className == "cap-btn") {
-                accCtx.drawImage(capArray[i], 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    capCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);  
+    for (let i = 0; i < 10; i++) {
+        if ((event.target.value === caps[i])&&(event.target.className == "cap-btn")) {
+                capCtx.drawImage(capArray[i], 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
                 event.target.className = "cap-clicked-btn";
-            } else {
-                accCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+            } 
+        else if ((event.target.value === caps[i])&&(event.target.className == "cap-clicked-btn")){
+                capCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);   
                 event.target.className = "cap-btn";
-            };
-        };
-    };
-}
+            }
+        }
+    }
+
 
 const batArray = new Array();
 const bats = ["bat-doosan", "bat-hanwha", "bat-kia", "bat-kiwoom",
@@ -332,25 +340,31 @@ for (let i = 0; i < 10; i++) {
     batArray[i].src = batName.src;
 };
 
+
 function onClickBat(event) {
     event.preventDefault();
-    batCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    batCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);   
     for (let i = 0; i < 10; i++) {
-        if (event.target.value === bats[i]) {
-            if (event.target.className == "bat-btn") {
+        if ((event.target.value === bats[i])&&(event.target.className == "bat-btn")) {
                 batCtx.drawImage(batArray[i], 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
                 event.target.className = "bat-clicked-btn";
-            } else {
-                batCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+            } 
+        else if ((event.target.value === bats[i])&&(event.target.className == "bat-clicked-btn")){
+                batCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);    
+                for (let j = 0; j < 10; j++) {
                 event.target.className = "bat-btn";
-            };
-        };
-    };
-}
+                }
+            }
+        }
+    }
+
+
 
 const accArray = new Array();
 const accs = ["acc-doosan", "acc-hanwha", "acc-kia", "acc-kiwoom",
     "acc-kt", "acc-lg", "acc-lotte", "acc-nc", "acc-samsung", "acc-ssg"]
+
+const accId = ['acc-DB',"acc-HE","acc-KT","acc-KH","acc-KW","acc-LT","acc-LG","acc-ND","acc-SL","acc-SD"]
 
 for (let i = 0; i < 10; i++) {
     accArray[i] = new Image();
@@ -358,19 +372,22 @@ for (let i = 0; i < 10; i++) {
     accArray[i].src = accName.src;
 };
 
+
 function onClickAcc(event) {
     for (let i = 0; i < 10; i++) {
-        if (event.target.value === accs[i]) {
-            if (event.target.className == "acc-btn") {
+        if ((event.target.value == accs[i]) && (event.target.className == "acc-btn")) {
                 accCtx.drawImage(accArray[i], 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
                 event.target.className = "acc-clicked-btn";
-            } else {
-                accCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-                event.target.className = "acc-btn";
-            };
-        };
-    };
-}
+            }
+        else if((event.target.value == accs[i]) && (event.target.className == "acc-clicked-btn")){
+            accCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+            for (let j = 0; j < 10; j++) {
+                document.getElementById(accId[j]).className="acc-btn";
+            }
+        }
+        }
+        }
+        
 
 
 function onFileChange(event) {
@@ -563,13 +580,40 @@ function onClickTabInTabEtc() {
     }
 }
 
+/* 모바일 함수 */
 
+
+function onTouchStart(event){
+    isPainting = true;
+    document.body.className = "stop-scrolling";
+    console.log(event.touches[0].pageX );
+    console.log(event.touches[0].pageY - document.body.scrollTop);
+}
+
+
+function onTouchMove(event){
+    if (isPainting) {
+        drawCtx.lineTo(event.touches[0].pageX - document.body.scrollLeft, event.touches[0].pageY - document.body.scrollTop);
+        drawCtx.stroke();
+        return;
+    }
+    drawCtx.beginPath();
+    drawCtx.moveTo(event.touches[0].pageX - document.body.scrollLeft, event.touches[0].pageY - document.body.scrollTop);    
+}
+
+function TouchEnd(){
+    isPainting = false;
+    document.body.className = "";
+}
 
 
 textCanvas.addEventListener("mousemove", onMove);
 textCanvas.addEventListener("mousedown", onMouseDown);
 textCanvas.addEventListener("mouseup", cancelPainting);
 textCanvas.addEventListener("mouseleave", cancelPainting);
+textCanvas.addEventListener("touchmove", onTouchMove);
+textCanvas.addEventListener("touchstart", onTouchStart);
+textCanvas.addEventListener("touchend", TouchEnd);
 textCanvas.addEventListener("dblclick", onTexting);
 
 backgroundTab.addEventListener("click", onclickBackgroundTab)
