@@ -251,7 +251,7 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 28rem;
+    margin-top: 3rem;
 }
 
 .ui-box {
@@ -439,7 +439,7 @@ a {
 
  .bat-btn, .cap-btn, .acc-btn {
     padding: 0.5rem;
-    margin:0.5rem;
+    margin: 0.2rem;
     width: 3rem;
     font-size: 80%;
     font-family:'Noto Sans' sans-serif;
@@ -458,16 +458,16 @@ a {
 
  .acc-clicked-btn, .cap-clicked-btn, .bat-clicked-btn{
     padding: 0.5rem;
-    margin:0.5rem;
+    margin: 0.2em;
     width: 3rem;
-    font-size: 13px;
+    font-size: 80%;
     font-family:'Noto Sans' sans-serif;
     background-color: palegreen;
     color: olivedrab;
     cursor: pointer;
     border: none;
     border-radius: 5px;
-    text-align:center;
+    text-align: center;
  }
 
  .reset-btn{
@@ -499,6 +499,20 @@ a {
 
  .wear-btn:hover {
     opacity: 50%
+ }
+
+ .wear-clicked-btn {
+    padding: 0.5em;
+    margin:0.5rem;
+    width: 3rem;
+    font-size: 13px;
+    font-family:'Noto Sans' sans-serif;
+    background-color: var(--theme-color-c);
+    color: #000000;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    text-align:center;
  }
 
  #fill-btn{

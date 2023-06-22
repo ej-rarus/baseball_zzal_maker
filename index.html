@@ -108,8 +108,8 @@
       <div class="ui-container">
         <div class="tab-btn-container">
           <div class="tab-btn" id="background-tab">배경 선택</div>
-          <div class="tab-btn" id="team-tab">팀 선택</div>
-          <div class="tab-btn" id="uniform-tab">유니폼 선택</div>
+          <div class="tab-btn" id="team-tab">팀</div>
+          <div class="tab-btn" id="uniform-tab">유니폼</div>
           <div class="tab-btn" id="acc-tab">악세서리</div>
           <div class="tab-btn" id="drawing-tab">그리기</div>
           <div class="tab-btn" id="text-tab">텍스트</div>
@@ -147,7 +147,7 @@
               ></div>
               <div
                 class="color-option"
-                style="background-color: #ffffff"
+                style="background-color: #ffffff; border: 1px solid lightgray"
                 data-color="#ffffff"
               ></div>
               <div
@@ -189,12 +189,8 @@
             <div class="team-btn-container">
               <button class="team-btn" id="team_KT" value="kia">KIA</button>
               <button class="team-btn" id="team_KW" value="kt">KT</button>
-              <button class="team-btn" id="team_LT1" value="lg1">
-                LG (럭키)
-              </button>
-              <button class="team-btn" id="team_LT2" value="lg2">
-                LG (스타)
-              </button>
+              <button class="team-btn" id="team_LT1" value="lg1">LG1</button>
+              <button class="team-btn" id="team_LT2" value="lg2">LG2</button>
               <button class="team-btn" id="team_ND" value="nc">NC</button>
               <button class="team-btn" id="team_SD" value="ssg">SSG</button>
             </div>
@@ -237,9 +233,9 @@
           </div>
           <div class="acc-ui-container">
             <div class="tab-in-tab-container">
-              <div class="tab-btn" id="tab-in-tab-bat-btn">방망이</div>
-              <div class="tab-btn" id="tab-in-tab-cap-btn">모자</div>
-              <div class="tab-btn" id="tab-in-tab-etc-btn">기타</div>
+              <div class="tab-in-tab-btn" id="tab-in-tab-bat-btn">방망이</div>
+              <div class="tab-in-tab-btn" id="tab-in-tab-cap-btn">모자</div>
+              <div class="tab-in-tab-btn" id="tab-in-tab-etc-btn">기타</div>
             </div>
 
             <div class="acc-btn-container" id="tab-in-tab-bat">
@@ -301,21 +297,25 @@
                 <button class="acc-btn" id="acc-SL" value="acc-samsung">
                   삼성💙
                 </button>
-                </div>
-                <div class="etc-btn-container">
+              </div>
+              <div class="etc-btn-container">
                 <button class="acc-btn" id="acc-KH" value="acc-kiwoom">
                   키움🦸
                 </button>
                 <button class="acc-btn" id="acc-HE" value="acc-hanwha">
                   한화🧡
                 </button>
-                <button class="acc-btn" id="acc-KT" value="acc-kia">KIA💛</button>
-               </div>
+                <button class="acc-btn" id="acc-KT" value="acc-kia">
+                  KIA💛
+                </button>
+              </div>
               <div class="etc-btn-container">
                 <button class="acc-btn" id="acc-KW" value="acc-kt">KT🧣</button>
                 <button class="acc-btn" id="acc-LT" value="acc-lg">LG📍</button>
                 <button class="acc-btn" id="acc-ND" value="acc-nc">NC🫶</button>
-                <button class="acc-btn" id="acc-SD" value="acc-ssg">SSG👑</button>
+                <button class="acc-btn" id="acc-SD" value="acc-ssg">
+                  SSG👑
+                </button>
               </div>
             </div>
           </div>
@@ -469,7 +469,7 @@
         </div>
       </div>
 
-      <button id="export-btn" role="button">짤 다운로드 (아이폰은 사파리를 통해 이용해주세요)</button>
+      <button id="export-btn" role="button">짤 다운로드</button>
       <button id="gotoTop">Top↑</button>
     </div>
 
